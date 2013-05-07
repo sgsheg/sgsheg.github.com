@@ -1,4 +1,3 @@
 sgsheg.github.com
 =================
-
-sgsheg's HomePage
+A programmer named sgsheg
