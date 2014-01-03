@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>ubuntu使用技巧1 | sgsheg</title>
+  <meta name="author" content="sgsheg">
+  
+  <meta name="description" content="最近一年都在Ubuntu环境下开发,总结一下使用技巧!">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="ubuntu使用技巧1"/>
+  <meta property="og:site_name" content="sgsheg"/>
+
+  <link rel="alternate" href="/atom.xml" title="sgsheg" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">sgsheg</a></h1>
+  <p><a href="/">爱web,爱那妮!</a></p>
+</div>
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2014-01-03T08:59:56.000Z"><a href="/2014/01/03/2013-11-09-ubuntu-tip/">1月 3 2014</a></time>
+    
+    
+  
+    <h1 class="title">ubuntu使用技巧1</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h4 id="Ubuntu-4f7f-7528-6280-5de7-1">Ubuntu使用技巧1</h4>
+<p>一年多来,都在Ubuntu上进行开发.Ubuntu可以说linux发行版中比较好用的一派,虽然比不上[苏西]的绚丽,但是已经足够使用.<br>Ubuntu是Debian的一个分支,安装软件方便简单.</p>
+<pre><code><span class="comment">sudo</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">install</span> <span class="literal">+</span> <span class="comment">softname</span>
+</code></pre><p>当然我就把我常常用到的给列出来.</p>
+<p>Ubuntu快速卸载软件.</p>
+<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge</span>
+</code></pre><p>来自于如下:</p>
+<pre><code>apt-get --purge remove <span class="keyword">...</span> is the the same as apt-get purge ..... 
+purge removes global configuration files only.It does note remove virtual machines,so it<span class="string">'s safe to use.</span>
+</code></pre><p>Ubuntu完全卸载libreOffice</p>
+<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge libreoffice*
+sudo apt-<span class="keyword">get</span> clean</span>
+</code></pre><p>Ubuntu卸载kazam.</p>
+<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge kazam</span>
+</code></pre><p>Ubuntu卸载VirtualBox</p>
+<pre><code><span class="comment">sudo</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">purge</span> <span class="comment">virtualbox</span><span class="literal">-</span><span class="comment">*</span>
+</code></pre><p>Ubuntu卸载gnome和gnome-classic</p>
+<pre><code><span class="comment">sudo</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">purge</span> <span class="comment">gnome</span><span class="literal">-</span><span class="comment">shell</span><span class="literal">-</span><span class="comment">*</span>
+</code></pre><p>更多详见: </p>
+<pre><code><span class="comment">http://askubuntu</span><span class="string">.</span><span class="comment">com/questions/65200/remove</span><span class="literal">-</span><span class="comment">gnome</span><span class="literal">-</span><span class="comment">shell</span><span class="literal">-</span><span class="comment">completely</span><span class="literal">-</span><span class="comment">after</span><span class="literal">-</span><span class="comment">installing</span><span class="literal">-</span><span class="comment">it</span> 
+</code></pre><p>Ubuntu中删除用户:</p>
+<pre><code><span class="built_in">sudo</span> userdel -r newuser
+</code></pre><p>参数: <code>-r</code> 删除家目录[还是台湾叫法好啊]</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+
+<div class="widget recent-posts first">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/03/2014-1-1-install-new-ubuntu/">重新安装ubuntu小记</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/03/2013-12-31-happy-new-year/">2014,你好!</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/03/2013-12-08-responsive-html/">开始响应式布局之旅</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/03/2013-12-01-read-the-book-notebook-1/">《我编程 我快乐》阅读笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/03/2013-11-29-css-profession-guide-1/">css3实用指南阅读笔记1</a>
+      </li>
+    
+  </ul>
+</div>
+
+    
+      
+      
+
+<div class="widget blogroll">
+  <h3 class="title">友情链接</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://heroicyang.com/" target="_blank">Heroic Yang&#39;s Blog</a></li>
+  
+  </ul>
+</div>
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2014 <a href="/">sgsheg</a>
+  
+</div>
+<div class="theme-copyright">
+  I am sgsheg!
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'sgsheg';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
