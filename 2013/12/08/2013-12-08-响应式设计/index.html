@@ -1,0 +1,466 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>开始响应式布局之旅 | sgsheg</title>
+  <meta name="author" content="sgsheg">
+  
+  <meta name="description" content="做一个靠谱的IT男!">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="开始响应式布局之旅"/>
+  <meta property="og:site_name" content="sgsheg"/>
+
+  <link rel="alternate" href="/atom.xml" title="sgsheg" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">sgsheg</a></h1>
+  <p><a href="/">爱web,爱那妮!</a></p>
+</div>
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-12-08T00:00:00.000Z"><a href="/2013/12/08/2013-12-08-响应式设计/">12月 8 2013</a></time>
+    
+    
+  
+    <h1 class="title">开始响应式布局之旅</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h4 id="-54cd-5e94-5f0f-5e03-5c40-">响应式布局</h4>
+<ol>
+<li><p>优雅降级</p>
+<p>“优雅降级”:当你利用所有新的特性(那些能力最强的浏览器最强的特性),你要保证那些相对较老的浏览器也能访问你的内容.</p>
+<p>优雅降级不见得是未来友好型的,它表现出了一种对使用旧的浏览器的用户不尊敬,而且忽视了现实状况,因为还有很多崭新设备(手机)也只带有能力较弱的浏览器.</p>
+<p>“渐进增强”:从本质上来说,就是把优雅降级给倒了过来.不像优雅降级那样为先进的,最强进的浏览器开发站点,然后让功能差劲的浏览器也能使用多少功能.相反,渐进增强会先创建一个基本体验,该基本体验使用具有语义的标记和结构定义,并侧重于让内容以一种简洁的方式来展现,同时这也是一种为能力更强的浏览器创建更丰富的体验.</p>
+<p>把渐进体验比喻为一颗花生豆.内容是花生,样式部分是(css)是巧克力,交互部分(javascript)是糖衣.虽然内容部分可以单独存在,但是在最外面加上功能层后,体验就会变得更加丰富而完整了.</p>
+<p><strong>响应式设计使用了同样的思想,并会针对不同的设备提供适当的内容和布局.即先从一个基本的布局开始,然后使用流动布局和媒介查询这些技术来为功能更多,屏幕更大(功能更多和屏幕更大并不总是同义的)的设备增强使用体验.</strong></p>
+</li>
+<li><p>流动布局</p>
+<a id="more"></a>
+
+<p>我相信,web最大的有点常常被人们视为是限制和缺陷.灵活性是web固有的本性.作为设计师和开发者的我们,应该去拥抱它的这一特性,并且要设计开发出同样具有灵活性的页面,使得所有的设备都可以访问.</p>
+<p>作为灵活性的第一步,就是要为我们的站点创建流动布局,并藉此来对不同尺寸的设备屏幕做出不同的响应.</p>
+<p>布局:4种不同的布局.</p>
+<p>固定布局: 页面宽度会被指定为特定大小的像素.其中960像素是使用最为广泛的宽度.固定布局是web布局中最为常见的实现方式,因为固定布局会给人较多控制权的错觉.能确切知道你的站点会以多宽来显示,这使得你能创建出拥有大量的图形的设计,而且即使是在不同的屏幕上,它们也看起来相对一致.</p>
+<p>缺点: 严格的固定布局在今天广泛而多样的设备生态系统中早已问题重重,因为当今很多最新,功能最强的手机和平板电脑的浏览器会默认显示缩小之后的网页,以此来适应它们那较小的屏幕.虽然可以通过手指来缩放页面,但是这样的操作会让人感到烦琐.</p>
+<p>流动布局: 度量的单位不是像素,而是百分比,这样可以使页面具有可变的特性.</p>
+<p>在实施诸如媒介查询,针对不同的分辨率优化样式这样的响应式策略时,流动布局能使这些策略更加容易实现.由于没有那么多的问题需要修复,因此需要写的CSS样式也就相对较少.</p>
+<p>单独使用流动布局这一方法依然不足以保证所有元素在从手机到电脑屏幕上等一系列设备都能保持良好的效果.因为有些文本的行宽在大屏幕上会太宽,而在小屏幕上又看起来太窄.</p>
+<p>流动布局仅仅是个开始.</p>
+</li>
+<li><p>弹性布局</p>
+<p>弹性布局与流动布局类似,只是他们的度量单位不同.通常情况下,在弹性布局中会以em来作为单位.1em相当于当前字体的大小.如果body的字体为16px,那么1em就等于16px.</p>
+<p>但是在弹性布局中也可能出现令人讨厌的水平滚动条.如果你把字体大小设置为16px,并把容器宽度设置为55em,那么就会在任何宽度小于880px的屏幕中国出现水平滚动条.弹性布局中这个问题比固定布局中的情况还要有更多的不稳定性,因为如果用户把字体放大到了18px,那么你的容器就便会达到990px.</p>
+</li>
+<li><p>混合布局</p>
+<p>混合布局结合了上面提到的两种或两种以上的布局方式.</p>
+<p>假设你有一个300px宽的广告区域,那么你可以将放置广告的边栏指定为固定的300px,其余各列的宽度则以百分比为单位.这样既保证了广告的宽度为固定的300px(考虑到第三方广告服务,这样的安排很有必要),同时除边栏之外的其他内容也能填满剩下的整个空间.</p>
+<p>但在流动布局中使用上面方法很容易让页面混乱不堪.如果边栏设置为300px,把主页内容设置为70%,那么当屏幕小于1000px时,还是会遇到水平滚动条问题.</p>
+</li>
+</ol>
+<ol>
+<li><p>问题,那种布局最具有响应性????</p>
+<p>根本上来说,者取决于你特定的项目,因为每一种方式都有其优势和缺点.</p>
+<p>大多数情况下,最佳答案是具有灵活性的那几种布局:流动布局,弹性布局或者混合布局—-因为相对固定布局,他们对未来更加友好.</p>
+<p>一句话,没有完美的答案.</p>
+</li>
+<li><p>字体大小px</p>
+<p>为了让设计拥有web的流动性,那就意味着你的设计中能灵活改变字体大小,可以使用任意单位来设置字体大小,但是主要方法无外乎三种: 像素,em和百分比.</p>
+<p>像素:一直以来,像素都是人们喜欢的字体大小单位,无论如何设置字体大小,你都能对其进行准确的控制,如果你把它设置为18px,那么每个浏览器都会将其设置为18px.</p>
+<p>但是这样的掌控会付出一定代价.虽然使用像素作为字体的大小单位不需要考虑级联—-父元素的字体大小对子元素没有影响,但也意味着当你想让某些文本以不同的大小显示时,就需要对他们逐一设置.这对于维护来说,非常不利.你就不得不逐一修改每一个值.</p>
+<p>以像素为单位的字体在老版本的IE中是无法实现缩放的,意味着使用IE9以前的,字体默认大小的IE浏览器的用户是不能调节你的页面中的字体大小的.</p>
+<p>用像素指定字体大小依然不是对未来特别友好的方式,使用像素作为字体大小的单位,是与web灵活性原则背道而驰的做法.</p>
+</li>
+<li><p>字体大小em</p>
+<p>使用em作为字体大小的单位是一种更加流行,具有灵活性的方法.1em等于默认的字体大小.</p>
+<p>em可跨浏览器进行缩放,而且他们也是级联的.这即可以是好事情,也可以是坏事.从简化维护的角度来说这是好事,因为这样可以相对地指定元素大小,意味着你只需要调整初始化的基准,其余部分就会自动调整,而且按比例调整.</p>
+<p>但级联也会让事情变得复杂.</p>
+<p>要试着结构化你的css和html,并保持字体的可预测性.如果你的内容部分使用了基准字体大小,只是修改了标题元素大小,那么你就可以避免这些问题了.</p>
+</li>
+<li><p>字体大小:百分比</p>
+<p>和em一样,以百分比为单位的字体也是可以缩放的,而且是级联的.与em相似,如果字体大小是16px,那么100%就相当于16px,200%相当于32px.</p>
+<p>从理论上来讲,百分比和em没有很多的区别,而em逐渐成为了web中更受欢迎的字体度量单位.其实没有什么技术原因.</p>
+<p>IE浏览器,却在显示em的时候有问题.如果基准是以em为单位的,那么IE会夸大调整字体的大小.如何解决ie夸大问题:</p>
+<p>你可以在body中加入百分比为单位来指定基准字体大小:</p>
+<p><code>body {
+ font-size: 100%;
+}</code></p>
+<p>在大多数浏览器中,默认的字体大小都是16px.通过Body的字体设置为100%后,你就可以保证页面是可以缩放的,而且不会有夸大现象.之后,你就可以使用em来指定字体大小了.</p>
+<p>桌面浏览器默认的字体大小是16px/</p>
+<p>但是,这一特性对于其他类型的设备有时就不那么奏效了.比如黑莓6.0系统上,默认的font-size是22px,Kindle Touch默认的字体是26px.</p>
+<p>很多新的设备都有较高的分辨率,因此16px的字体在上面会看起来很小.大多数设备只好向浏览器说,自己有一个与实际不符的分辨率来绕过问题.</p>
+</li>
+<li><p>字体大小: 奖励关卡: rem</p>
+<p>rem: root em</p>
+<p>rem与em的区别: rem大小与根像素—HTML元素有关.使用rem可以避免发生在嵌套元素中的级联问题.</p>
+<p>通常情况下,rem在桌面浏览器得到了很好的支持.IE9+,Chrome6.0+,Safari5.0+以及Opera11.6+都支持rem.另外,IOS4.0+和Android2.1提供了相应支持.但opera mobile还都不支持.</p>
+<p>为了支持上面情况,你可以额外设置一个以像素为单位的备用方案.</p>
+<p><code>span {
+ font-size: 16px;
+ font-size: 1rem;
+}</code></p>
+</li>
+<li><p>字体: 哪种是最具有响应式的??</p>
+<p>使用em不但可以使字体能够缩放,而且维护起来也更加容易.</p>
+</li>
+<li><p>网格布局</p>
+<p>相对于css布局,表格布局的优势之一在于它简化了将站点布局为多列的实现过程.可以混合使用固定宽度和流动宽度: 一行里可以使用包括好几列.</p>
+<p>`.main {</p>
+<pre><code><span class="attribute">display</span>: <span class="string">table-cell;</span>
+</code></pre><p>}`</p>
+<p>是时候扫除css表格值的尘土,开始使用,移动平台对此支持也很好. 如果将某列设置为table-cell,那么就可以使用固定宽度和滚动宽度了.</p>
+<p><code>display: table;</code>告诫: </p>
+<p>在一个被你指定为<code>display: tablecell;</code>的元素内,你无法精确匹配定位元素.如果你需要精确定位,你就不得不在表格系统中再插入一个div,或者干脆不使用<code>display: table</code>.</p>
+<p>web设计中没有银弹:&lt;银弹是指的是那些解决复杂而棘手的问题方法或者技术手段&gt;,仔细考虑你的需求,包括使用<code>display: table;</code>.</p>
+<p><strong>记住,站点不需要在不同设备的不同浏览器中看起来一模一样,事实上也无法做到的.</strong></p>
+</li>
+<li><p>布局总结</p>
+<p>大多数情况下,流动布局(以百分比为单位,因而可以根据屏幕来调整自身布局)是你设计站点时的最佳选择.当宽度被字体大小限制时,可以使用弹性布局,当宽度被百分比限制时,你可以使用流动布局.</p>
+<p>我们要坚持使用百分比和em,尽管rem未来很有潜力.</p>
+<p>通过使用CSS表格,你可以很容易的将固定宽度与流动宽度结合使用,现代浏览器都有极为出色的支持.而且你还可以通过条件注释来为IE7以及以下版本提供备用样式.</p>
+</li>
+<li><p>媒介查询</p>
+<p>媒介查询可以让你根据在特定环境下查询到各种属性值—-比如分辨率,色彩深度,高度和宽度—-来决定采用什么样的样式.</p>
+</li>
+<li><p>视口 </p>
+<p>在桌面浏览器中,视口是一个简单概念,视口就是浏览器的可视区域,也指浏览器的宽度.</p>
+<p>像素就是像素,除非它不是像素.</p>
+<p>浏览器涉及到两种像素: 设备像素和CSS像素.</p>
+<p><strong>你需要在视口中考虑两种不同的像素. 你有两种不同的视口要考虑: 布局视口和视觉视口.</strong></p>
+<p>布局视口与设备像素非常相似,因为他们都度量单位是一样的.但是视觉窗口是可以变化的,视觉窗口指的是屏幕上显示的那一部分页面.在移动窗口上,这便成为了一件复杂的事情.</p>
+<p><code>webkit</code>通过视口元标签,我们可以控制页面在很多设备上的大小和布局视口.</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;directiv, directive&quot;/&gt;</code>,该标签需要放在head标签中.width声明可以让你将视口设置为某一特定的宽度,或者为设备屏幕的宽度.</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot; /&gt;</code>在width声明中使用device-width是最佳选择.</p>
+<p>你最好不要为width设置宽度,而要使用device-width.与width对应的是height,当然可以这样声明:<code>&lt;meta name=&quot;viewport&quot; content=&quot;height=device-height&quot; /&gt;</code>高度.在实践中,你也许并不会指定高度.因为height唯一有用的地方,就是当你不想让页面垂直滚动的时候,但是这种情况并不多见.所以,你可以不使用height.</p>
+<p>css设备配对:实际上,视口元素不是规范的.</p>
+<p>@viewport可以让你在CSS中直接使用视口元标签中的那些描述符(width,zoom,orientation,resolution等).譬如:</p>
+<p>`@viewport {</p>
+<pre><code><span class="attribute">width</span>: <span class="string">device-with;</span>
+</code></pre><p>}`</p>
+</li>
+<li><p>媒介查询</p>
+<p>媒介查询可以通过询问浏览器来确定特定的表达式是否为真.如果是真,那么就会直接加载一些特殊的,适用于这种情况的样式,从而达到调整布局的目的.</p>
+<p>媒介查询的一般形式:</p>
+<p><code>@media [not|only] type [and] (expr) {
+rules
+}</code></p>
+<p>一条媒介查询包含如下信息:<br>媒介类型: 特定目标的设备<br>媒介表达式: 测试某一特性是否为真<br>逻辑关键词: 你可以使用关键词(and,or,not)来测试出更复杂的表达式.<br>规则: 调整显示效果的基本样式</p>
+</li>
+<li><p>媒介类型</p>
+<p>css定义了10种不同的媒介类型. all(所有设备,默认).媒介查询的强大地方就在于他们利用表达式来检测设备不同特性的真与假.比如</p>
+<p>`@media screen and (min-width: 320px) {</p>
+<p>}`</p>
+<p>这条语句可以来检测出两种东西: 检测页面是否属于screen,然后再测试设备的视口宽度.其中min会保证视口宽度至少为320px.</p>
+<p>很多较老的浏览器支持媒介查询,但并不支持媒介查询.有些甚至会导致浏览器尝试下载那些你不希望让用户看到的样式.这时你可以使用only关键字,为那些较老的浏览器隐藏媒介查询.譬如:</p>
+<p><code>@media only screen and (color)</code></p>
+<p>媒介查询可以写在页面内部,当然也可以通过link元素的media属性被包含到页面中来.</p>
+<p>`a {<br>text-decoration: none;<br>}<br>@media screen and (min-width: 130px) {<br>a {</p>
+<pre><code><span class="attribute">text-decoration</span>: <span class="string">none;</span>
+</code></pre><p>}<br>}`</p>
+<p>到底使用那种方案,取决于你的项目,因为这两种方案都有利弊.</p>
+<p>内嵌媒介查询中,无论是否使用到,所有的样式都会被下载起来,但其好处是只需要一个HTTP请求即可.移动网络上一次HTTP请求所需要的时间可能是有线连接的4到5倍.当然内嵌样式也有缺点,那就是单个CSS文件会变得很大.</p>
+<p>因此,在你节省下一些请求数的同时,你也创建了一个较难维护的大型文件.</p>
+<p>外部媒介查询的优势在于文件可以变得很小,进而利于维护.</p>
+<p><strong>我推荐人们使用内嵌媒介查询,因为额外的http请求肯定会让站点变慢,而且性能是如此重要,以至于我们不能忽视掉他们</strong></p>
+</li>
+<li><p>媒介查询顺序</p>
+<p>从桌面端向下设计的,因为他的默认布局是你在笔记本或者台式机的浏览器所看到的那样.这种思想的通常设计.</p>
+<p><code>/*base design*/
+@media all and (max-width: 768px) {
+...
+}
+@media all and (max-width: 320px) {
+...
+}</code></p>
+<p>但是向下设计会造成一些问题.虽然目前移动设备对媒介查询的支持有所改善,但是依旧不够完善.比如黑莓(6.0以前版本),Window Phone 7还有NetFront(驱动着前三代kindle)对媒介查询都缺乏必要的支持.</p>
+<p>每位用户都拥有最新最好的设备—-这样的想象虽然很有趣,但事实并非如此.Android4是最新的设备,但是有将近66%的设备依旧运行着Andirod2.3x或更低的设备.同样的问题在黑莓中依然存在——目前有66%的黑莓用户对媒介查询缺乏支持.</p>
+<p>事实上,并不是每个人都追赶快速发展的新技术,而另外一些人或许压根就买不起新的技术和设备.</p>
+<p>从移动端向上设计:</p>
+<p>优先建立移动体验确保那些不支持媒介查询的移动设备也能获得一个合适的布局.你唯一需要着手处理的就是IE.因为IE9以前的浏览器器是不支持媒介查询的,当然这个问题也可以解决.</p>
+<p>一个采用移动端向上的样式表通常是这样的.</p>
+<p><code>@media all and (min-width: 320px) {
+....
+}
+@media all and (min-width: 768px) {
+...
+}</code></p>
+<p>优先创建移动体验还可以降低CSS的复杂性.</p>
+<p>创建核心体验:覆盖面广是互联网伟大特性之一,要尽可能发挥它的优势.</p>
+<p>确定断点:传统的确定断点都是使用一些固定的标准宽度:320px(iphone和其他一些设备),768px(ipad)和1024px.</p>
+<p>当你完全根据常见设备来确定断点的时候,你就会冒着为这些特性宽度开发而忽视这些宽度之间(例如iphone横屏后为480px)的设备的风险.同样这种方法对未来也不是友好的.你将不得不增加新的断点.</p>
+<p>增强对大屏幕的支持.设置max-width来设置窗口浏览器窗口的最大宽度.或者通过字体来增大来增加行高.</p>
+<p>使用em来为媒介查询增加灵活性.</p>
+<p>人们会使用不同缩放级别的浏览器来浏览web,有些视觉障碍的人也许会觉得很多站点的文字难以看清,因此会将默认的缩放级别增大.在firefox和opera中,这不是什么问题,因为基于像素的媒介查询将会按照缩放级别重新计算样式,并应用到字体上.但其他浏览器中,我们之前一直很完美的断点开始让我们失望了.</p>
+<p>我们可以使用em来解决这些问题,而让我们的站点更加灵活.</p>
+</li>
+<li><p>导航栏</p>
+<p>导航栏是我们总结媒介查询前处理的最后一个元素.如果用户不知道如何前往他们想去的页面,那么即使站点有再好的内容也不会留住用户.</p>
+<p>无论用户使用的是什么样子的屏幕,你的导航栏都应该是可以访问的,而且要易于使用.</p>
+<p>我们期望的导航栏:<br>它不应该占用宝贵的屏幕空间<br>它应该是直观的,这样用户就不会迷失方向或者感到困惑<br>他应该在各个设备上应用(尽管体验会根据所使用的设备能力的不同而不同).</p>
+<p><strong>只有IE9以及更高版本的IE才支持媒介查询</strong></p>
+</li>
+<li><p>媒介查询结束</p>
+<p>智能手机总是希望能为人们提供完整的web体验,如果不使用视口元标签,那么大部分智能手机都会显示一个缩小版的站点.</p>
+<p>媒介查询让我们坚持诸如视口宽度或高度这样的特性,并据此来适当地调整CSS样式.</p>
+<p>在媒介查询中,使用em来替换px,可以让响应式站点更加灵活而且是可访问的.</p>
+<p><strong>一定要在真实的设备上测试,这样可以提醒你应该针对不同的屏幕对类似于导航菜单这类组件做出相应的调整.</strong></p>
+</li>
+<li><p>响应式多媒体</p>
+<p><strong>遗憾的是,性能在很多项目中都是马后炮的角色.</strong></p>
+<p><strong>实际上71%的移动用户希望在手机上浏览站点时的性能像在他们在家中浏览站点一样快,甚至更快.</strong></p>
+<p>mdot(所以这么叫是因为很多针对手机的网站网址都是m开头的子域名.</p>
+<p>下载更少的字节以及发起更少的请求肯定会比原来要快.</p>
+<p><code>display: none;</code>不能在性能上有任何的帮助.只是简简单单地隐藏掉了,DOM元素依旧会被创建,隐藏的资源依旧会被下载.</p>
+<p>默认浏览器行为:先使用默认方法来下载小屏幕使用的图片,然后再在需要的时候下载比较大的图片.但是缺点是,大屏幕设备得在只需要发送一次请求的地方发送两次请求,所以尽可能避免这种情况,大屏幕上设备也同样需要.</p>
+<p>找服务器帮忙:—-使用服务器检测技术来决定应该下载哪一张图片?这种方法好处是不需要去和浏览器比速度,因为所有的逻辑代码在浏览器收到HTML之前就执行了.但是对未来是不是特别友好.随着技术发展,你应该知道,维护所有设备的信息会变得越来越困难.记住,有关设备的信息也不是那么可靠.</p>
+<p><strong>使用第三方解决方案的缺点.如果公司改变了它的现有规则或者停业了,那么你就可能会被冷落,并且不得不再去寻找另外一套崭新的解决方案.</strong></p>
+<p>依靠服务器端检测并结合使用js方法完全是一个头痛医头脚痛医脚的方法.如果有其他方案,我建议使用其他方案.</p>
+<p><strong>那么答案是什么!每种方案都有其缺点和优点,但是你选取的方法取决于你手中的项目.自适应图像可能是比较好的方案,因为不需要任何第三方扩展.</strong></p>
+<p>移动设备上的网速较慢的可能性最高.</p>
+<p>@font-face也放在媒介查询里去,来有条件下载图片.这样可以确保那些屏幕宽度低于断点的设备不会尝试下载字体.</p>
+<p>对于高分辨率屏幕显示问题,可以将SVG作为一个解决方案.SVG是使用XML来定义的矢量图形.也就是说他们在不增加文件大小的前提下自如缩放,这就意味着可以通过编程来改变或者调整它们.</p>
+<p>但是,IE8以及以下浏览器不支持SVG,移动端Andirod也不支持SVG.另外支持SVG的设备质量也参差不齐.</p>
+</li>
+<li><p>视频</p>
+<p>响应式中嵌入视频比之前要更加复杂.</p>
+<p>大多数网站会使用iframe来嵌入视频.虽然改变了宽度,但是高度依然会维持原始的值,这便破坏了视频的比例.</p>
+<p>使用html5添加视频:</p>
+<p><code>&lt;video src=&quot;q.egg&quot;&gt;&lt;/video&gt;</code></p>
+<p>还支持附加属性,height and width.</p>
+</li>
+<li><p>设计流程</p>
+<p>技术在不断变化,它在进化,它在成熟,进而能胜任新的工作.既然这样,我们就要必要学者去改变了.</p>
+<p>要关注的不是页面,而是系统.</p>
+<p>web是灵活的,不可预测的.</p>
+<p>建议首先考虑移动端的设计.先从移动端下手,然后满足不同设备的访问需求,让用户在不同设备上体验到相同的用户体验.</p>
+<p><strong>黑莓设备默认是不支持javascript的.</strong></p>
+</li>
+<li><p>我们该何去何从?</p>
+<p><strong>平台和设备的分化不会好转.事实上情况会越来越糟.为了适应,我们不得不改变现有的存储和访问方式.</strong></p>
+<p>既然内容创建者需要高质量的内容,那么你花费时间去教会他们如何去做,那么你就向前迈动了一步.</p>
+<p>首先你要了解站点要表达的是什么,然后再去了解将要显示什么内容,它们如何被创建,每一种类型的内容的目的是什么,以及他们的结构是什么样子.</p>
+<p>不是要隐藏内容,而是要加强内容.要更加严肃对待内容.要进一步优化用户的用户体验.</p>
+<p>更改—-加强用户体验.才是站点CMS的要点.</p>
+</li>
+<li><p>ress</p>
+<p><strong>抱怨工具的木匠不是好木匠.</strong></p>
+<p>用户代理字符串可以做什么?1. 提供用户详细的设备信息 2. 因为是在服务器上进行的,可以删除不必要下载的样式.</p>
+<p>但是,可以伪造用户代理,第三方检测需要额外的项目成本.</p>
+<p>在移动设备的全球市场份额中,最流行的浏览器是Opera Mini和Opera Mobile,这两种浏览器的流量非常可观.据OPera报道,2012年3月共有1.68亿用户使用Opera Mini浏览器浏览了1170亿个网页.</p>
+<p>Opera Mini浏览器能够支持Javascript,但却是在服务器端运行的,而不是在设备上.</p>
+<p>ress在web设计和开发中有着明显的优势.大幅图片无法在移动设备迁移,要考虑每种设备的优势和缺点.</p>
+<p>苹果公司: 一个触摸目标的至少需要44px.</p>
+<p>触摸功能检测是对触摸事件的支持,而不是是否具有一个触摸屏.例如虽然webOs手机虽然具有触摸屏,但是他们不支持触摸事件.</p>
+<p>拥有触摸屏并不意味着能够支持触摸事件.如果不支持触摸事件,就降级触发点击事件.要仔细考虑设备的各项能力,以及如何针对他们做出相应的定制.通过删除组件和样式,你可以轻易地为触摸屏幕,低端设备以及具有电话功能的设备做优化.</p>
+<p>web是一种交互性的媒体.如果我们要利用它的特性,就必须超越他的视觉外观来看待它.大部分页面设计都是印刷上面而来的,比如”页面”和”对折”.</p>
+<p>网络的质量和速度,对用户的体验有巨大的影响.一个站点的性能严重地影响了用户与其交互的方式影响.</p>
+<p><strong>一个真正的响应式的站点会依据较慢的网络或者数据上限来调整他们自己.</strong></p>
+<p>测试网络信息API</p>
+</li>
+</ol>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  
+  <div class="tags">
+    <a href="/tags/响应式设计/">响应式设计</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/css,性能/">css,性能</a><small>1</small></li>
+  
+    <li><a href="/tags/css3/">css3</a><small>1</small></li>
+  
+    <li><a href="/tags/emacs,begin/">emacs,begin</a><small>1</small></li>
+  
+    <li><a href="/tags/linux配置查询/">linux配置查询</a><small>1</small></li>
+  
+    <li><a href="/tags/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/tags/scp,ssh/">scp,ssh</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu/">ubuntu</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu,tip/">ubuntu,tip</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu,解压/">ubuntu,解压</a><small>1</small></li>
+  
+    <li><a href="/tags/个人成长/">个人成长</a><small>1</small></li>
+  
+    <li><a href="/tags/代码的未来/">代码的未来</a><small>1</small></li>
+  
+    <li><a href="/tags/响应式设计/">响应式设计</a><small>1</small></li>
+  
+    <li><a href="/tags/我编程,我快乐/">我编程,我快乐</a><small>1</small></li>
+  
+    <li><a href="/tags/敬畏之心/">敬畏之心</a><small>1</small></li>
+  
+    <li><a href="/tags/新年你好/">新年你好</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/css,性能/" style="font-size: NaNpx;">css,性能</a><a href="/tags/css3/" style="font-size: NaNpx;">css3</a><a href="/tags/emacs,begin/" style="font-size: NaNpx;">emacs,begin</a><a href="/tags/linux配置查询/" style="font-size: NaNpx;">linux配置查询</a><a href="/tags/nginx/" style="font-size: NaNpx;">nginx</a><a href="/tags/scp,ssh/" style="font-size: NaNpx;">scp,ssh</a><a href="/tags/ubuntu/" style="font-size: NaNpx;">ubuntu</a><a href="/tags/ubuntu,tip/" style="font-size: NaNpx;">ubuntu,tip</a><a href="/tags/ubuntu,解压/" style="font-size: NaNpx;">ubuntu,解压</a><a href="/tags/个人成长/" style="font-size: NaNpx;">个人成长</a><a href="/tags/代码的未来/" style="font-size: NaNpx;">代码的未来</a><a href="/tags/响应式设计/" style="font-size: NaNpx;">响应式设计</a><a href="/tags/我编程,我快乐/" style="font-size: NaNpx;">我编程,我快乐</a><a href="/tags/敬畏之心/" style="font-size: NaNpx;">敬畏之心</a><a href="/tags/新年你好/" style="font-size: NaNpx;">新年你好</a>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">2014-01-06-代码的未来阅读笔记&lt;上&gt;</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/08/2013-12-08-响应式设计/">开始响应式布局之旅</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/2013-12-01-我编程,我快乐/">《我编程 我快乐》阅读笔记</a>
+      </li>
+    
+  </ul>
+</div>
+
+    
+      
+      
+
+<div class="widget blogroll first newline">
+  <h3 class="title">友情链接</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://heroicyang.com/" target="_blank">Heroic Yang&#39;s Blog</a></li>
+  
+  </ul>
+</div>
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2014 <a href="/">sgsheg</a>
+  
+</div>
+<div class="theme-copyright">
+  I am sgsheg!
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'sgsheg';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

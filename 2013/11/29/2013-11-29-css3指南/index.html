@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>css3实用指南阅读笔记1 | sgsheg</title>
+  <meta name="author" content="sgsheg">
+  
+  <meta name="description" content="做一个靠谱的IT男!">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta property="og:title" content="css3实用指南阅读笔记1"/>
+  <meta property="og:site_name" content="sgsheg"/>
+
+  <link rel="alternate" href="/atom.xml" title="sgsheg" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <header id="header"><div class="title">
+  <h1><a href="/">sgsheg</a></h1>
+  <p><a href="/">爱web,爱那妮!</a></p>
+</div>
+<nav class="nav">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/about">About</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-11-29T00:00:00.000Z"><a href="/2013/11/29/2013-11-29-css3指南/">11月 29 2013</a></time>
+    
+    
+  
+    <h1 class="title">css3实用指南阅读笔记1</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="css3-5b9e-7528-6307-5357-9605-8bfb-7b14-8bb0-">css3实用指南阅读笔记</h3>
+<h4 id="-5199-5728-524d-9762-">写在前面</h4>
+<p><strong>尽可能广泛的受众提供尽可能优质的体验</strong></p>
+<p><strong>仅仅因为部分人不愿意或者不能升级浏览器,却让使用新型浏览器的用户无法享受CSS3所提供的伟大技术,这是毫无道理可言的</strong></p>
+<p><strong> 更少的标记和图片意味着用户需要下载的内容会更少,页面加载会更快.更少的图片,脚本和flash文件也就意味着更少的HTTP请求数,这就是提高页面加载速度的最佳方法之一.</strong></p>
+<p><strong> 某些图形化的CSS3技术,比如渐变,能够减少HTTP请求,但可能要求浏览器执行更多的工作来渲染,这就可能导致浏览器响应缓慢,并减少可用性.</strong></p>
+<p><strong> 因此不要随意滥用复杂的特性,并要完整地测试实现的那些特效.</strong></p>
+<p><strong> 有时候成功的使用CSS3最主要的阻碍反而不是浏览器的支持度,而是来自于客户或者老板的犹疑.</strong></p>
+<hr>
+<p>常见的CSS属性的浏览器前缀:</p>
+<ol>
+<li><p>-ms-     Trident         Internet Explorer</p>
+</li>
+<li><p>-moz-    Mozilla         Firefox</p>
+</li>
+<li><p>-o-*     Presto          Opera,Opera Mobile,Opera Mini,NIntendo wii浏览器   </p>
+</li>
+<li><p>-webkit- Webkit          Safari,Safari IOS,Chrome,Android浏览器   </p>
+<a id="more"></a>
+
+
+</li>
+</ol>
+<p>使用前缀时候,应该总是把包含无前缀的属性并将它放在最后.</p>
+<p>制作CSS气泡</p>
+<hr>
+<ol>
+<li>CSS的一些特性</li>
+</ol>
+<p><code>word-wrap</code>: 用来容纳溢出的文本 </p>
+<p><code>border-radius</code>: 用来实现圆角</p>
+<p><code>HSLA色彩模式</code>: 用来创建半透明的背景</p>
+<p><code>linear-gradient</code>方法: 用来实现背景渐变</p>
+<p><code>box-shadow</code>: 用来实现物件的阴影</p>
+<p><code>text-shadow</code>: 用来实现文字的阴影</p>
+<p><code>transform</code>: 用来旋转物件</p>
+<p>word-wrap早在IE5.5就支持这种属性.该属性实际上由微软创造,后来被W3C接受,其他浏览器都支持.</p>
+<p>CSS3实现圆角只需要一个border-radius: 20px;<br>该语法可以被Opera,Chrome,Safari和IE9支持.Firefox和Safari4以及之前的版本则分别使用: -moz-border-radius和-webkit-border-radius.<br>IE8以及以前版本则会简单的忽略该属性,直接显示直角.<br>如果要实现兼容IE8问题,可以使用如下的脚本:</p>
+<pre><code><span class="comment">1</span><span class="string">.</span> <span class="title">[</span><span class="comment">PIE</span><span class="title">]</span> <span class="comment">(http://css3pie</span><span class="string">.</span><span class="comment">com</span> <span class="comment">"PIE")</span>
+
+<span class="comment">2</span><span class="string">.</span> <span class="comment">Curved</span><span class="literal">-</span><span class="comment">Corner(http://code</span><span class="string">.</span><span class="comment">google</span><span class="string">.</span><span class="comment">com/p/curved</span><span class="literal">-</span><span class="comment">corner)</span>
+
+<span class="comment">3</span><span class="string">.</span> <span class="comment">IE</span><span class="literal">-</span><span class="comment">CSS3(http://fetchak</span><span class="string">.</span><span class="comment">com/id</span><span class="literal">-</span><span class="comment">css3)</span>
+
+<span class="comment">4</span><span class="string">.</span> <span class="comment">DD_roundies(http://dillerdesign</span><span class="string">.</span><span class="comment">com/experi</span><span class="literal">-</span><span class="comment">ment/DD_roundies)</span>
+</code></pre><p><strong> 关键你要权衡的是IE用户实现圆角所花费的额外工作量和造成的性能是否值得. </strong></p>
+<p>使用CSS3来制作三角形: </p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"sgsheg"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="class">.sgsheg</span> <span class="rules">{
+        <span class="rule"><span class="attribute">border-color</span>:<span class="value"> red green blue orange</span></span>;
+        <span class="rule"><span class="attribute">border-style</span>:<span class="value"> solid</span></span>;
+        <span class="rule"><span class="attribute">border-width</span>:<span class="value"> <span class="number">20</span>px</span></span>;
+    <span class="rule">`   <span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule">}</span></span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><p><code>border-color</code>代表的是”上””右””下”左”</p>
+<p>实现三角形的策略就是让其中的三个边框颜色设置为透明.(transparent),那么上面的就是一个三角形了.</p>
+<p>代码如下:</p>
+<pre><code><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+    <span class="class">.sgsheg</span> <span class="rules">{
+        <span class="rule"><span class="attribute">border-color</span>:<span class="value"> transparent green transparent transparent</span></span>;
+        <span class="rule"><span class="attribute">border-style</span>:<span class="value"> solid</span></span>;
+        <span class="rule"><span class="attribute">border-width</span>:<span class="value"> <span class="number">20</span>px</span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;
+        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule">}</span></span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><p>设计一个纯CSS三角形的要素是: 将一个元素的width和height设置为0,然后为它设置较粗的边框,并将其他的边框颜色设置为透明.你还可以为相邻边框设置边框高度来改变三角形的角度.</p>
+<p><strong> CSS3将伪元素使用了两个冒号而伪类则保持为单冒号.只要你愿意,你可以继续使用单冒号的版本,它可以兼容.IE8以及之前的版本不支持双冒号的方法,所以还是继续使用单冒号为好.</strong></p>
+<p>空格的HTML实体写作&nbsp;,可直译为”不折行间断”.它插入不会导致内容被浏览器换行.</p>
+<pre><code><span class="class">.caption</span><span class="pseudo">:before</span><span class="rules">{ 
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"{图}"</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="class">.blockquote</span><span class="pseudo">:after</span> <span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"\00A0"</span></span></span>; <span class="rule">//空格转为16制
+}</span></span>
+
+
+<span class="tag">blockquote</span><span class="pseudo">:after</span><span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">"\00a0"</span></span></span>;
+    <span class="rule"><span class="attribute">dispaly</span>:<span class="value"> block</span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">border-width</span>:<span class="value"> <span class="number">10</span>px <span class="number">20</span>px <span class="number">10</span>px <span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">border-style</span>:<span class="value"> solid</span></span>;
+    <span class="rule"><span class="attribute">border-color</span>:<span class="value"> transparent <span class="hexcolor">#000</span> transparent transparent</span></span>;
+<span class="rule">}</span></span>
+</code></pre><p>CSS3的色彩模式:</p>
+<ol>
+<li><p>RGBA<br>RGBA指的是: 红色,绿色,蓝色,Alpha透明度.(Red-Green-Blue-Alpha)</p>
+</li>
+<li><p>HSLA<br>HSLA则代表”色调,饱和度,亮度和Alpha透明度”(Hue-Saturation-Lightness-Alphs).</p>
+</li>
+<li><p>Hex #A6DADC<br>即颜色值的十六进制形式</p>
+</li>
+</ol>
+<hr>
+<p>对于CSS3上面的渐变性的兼容方案:</p>
+<ol>
+<li>使用图片(创建半透明的PNG渐变图片),并设置为blockquote的背景图平铺.</li>
+</ol>
+<p><strong>缺点: 创造并使用图片会抵消你使用CSS3来实现渐变所获得的效率提升.Firefox3.<br>6不会加载并不需要的那张图片,但是chrome和safari会加载那张图片.</strong></p>
+<p><strong> 虽然在Firefox上保留了CSS3渐变的效率优势,但是在Safari却没有.虽然你依旧享受到了由CSS3渐变带来的其他优势,但效果却是其中最重要的优势.</strong></p>
+<p>关于渐变的支持,IE是不支持的,firefox需要-moz-,Safari需要-webkit前缀,Chrome支持,也需要-webkit-前缀</p>
+<p>譬如实现一个颜色渐变的导航栏:</p>
+<pre><code><span class="class">.blockquote</span> {
+    <span class="attribute">border-top</span><span class="value">: <span class="number">1</span>px solid red;</span>
+    <span class="attribute">min-height</span><span class="value">: <span class="number">40</span>px;</span>
+    <span class="attribute">margin</span><span class="value">: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">112</span>px;</span>
+    <span class="attribute">padding</span><span class="value">: <span class="number">10</span>px <span class="number">15</span>px <span class="number">15</span>px <span class="number">15</span>px;</span>
+    -moz-<span class="attribute">border-radius</span><span class="value">: <span class="number">20</span>px;</span>
+    -webkit-<span class="attribute">border-radius</span><span class="value">:  <span class="number">20</span>px;</span>
+    <span class="attribute">border-radius</span><span class="value">: <span class="number">20</span>px;</span>
+    <span class="attribute">background-color</span><span class="value">: hsla(<span class="number">169</span>, <span class="number">41</span>%, <span class="number">76</span>%, .<span class="number">5</span>);</span>
+    <span class="attribute">background-image</span><span class="value">: -moz-linear-gradient(hsla(<span class="number">0</span>,<span class="number">0</span>%,-<span class="number">100</span>%,.<span class="number">6</span>), hsla(<span class="number">0</span>,<span class="number">0</span>%,<span class="number">100</span>%,<span class="number">0</span>) <span class="number">30</span>px);</span>    <span class="comment">//针对firefox内核</span>
+    <span class="attribute">background-image</span><span class="value">: -webkit-gradiennt(linear, <span class="number">0</span> <span class="number">0</span>, <span class="number">0</span> <span class="number">30</span>, from(hsla(<span class="number">0</span>,<span class="number">0</span>%,<span class="number">100</span>%,.<span class="number">6</span>))
+                to (hsla(<span class="number">0</span>,<span class="number">0</span>%, <span class="number">100</span>%,<span class="number">0</span>))
+                );</span>  <span class="comment">//针对webkit内核</span>
+    <span class="attribute">word-wrap</span><span class="value">: break-word;</span>
+}
+</code></pre><p><code>background-image</code>  制定了渐变的起始色,(hsla(0,0,100%,.6),终止色(hsla(0,0%,100%,0)和终止色的位置(30px).</p>
+<p>关于渐变:</p>
+<pre><code><span class="bullet">1. </span>实现渐变只需要指定两种颜色,其余的值都是可选的.如果不指定那么就是默认值.
+<span class="bullet">2. </span>可以在函数的第一个值里指定渐变的起始点,取值可以是关键词或数字.
+<span class="bullet">3. </span>指定了启示位置后,你就是可以接着指定渐变的角度.
+<span class="bullet">4. </span>每个颜色区间都包含一个颜色值.
+</code></pre><p>本质上说,既然background-image属性中的渐变是浏览器生成的图片,那么可以使用其他CSS属性来进行控制,就像对待其他图片那样. </p>
+<p>比如可以使用background-size来控制渐变的尺寸,或用background-repeat来控制是否将其平铺.</p>
+<p><strong>是使用图片来制作渐变,还是在不支持版本上不显示渐变,这个需要权衡</strong></p>
+<h4 id="box-shadow">box-shadow</h4>
+<p>box-shadow盒装阴影.<br>譬如:</p>
+<pre><code><span class="literal">-</span><span class="comment">moz</span><span class="literal">-</span><span class="comment">box</span><span class="literal">-</span><span class="comment">shadow:</span> <span class="comment">1px</span> <span class="comment">1px</span> <span class="comment">2px</span> <span class="comment">hsla(0</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span><span class="string">.</span><span class="comment">3);</span>
+<span class="literal">-</span><span class="comment">webkit</span><span class="literal">-</span><span class="comment">box</span><span class="literal">-</span><span class="comment">shadow:</span> <span class="comment">1px</span> <span class="comment">1px</span> <span class="comment">2px</span> <span class="comment">hsla(0</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span> <span class="string">.</span><span class="comment">3);</span>
+<span class="comment">box</span><span class="literal">-</span><span class="comment">shadow:</span> <span class="comment">1px</span> <span class="comment">1px</span> <span class="comment">2px</span> <span class="comment">hsla(0</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span><span class="comment">0%</span><span class="string">,</span><span class="string">.</span><span class="comment">3);</span>
+</code></pre><p>无前缀的box-shadow适应于IE9和Opera.<br>每个属性的第一个1px表示相对于盒容器的水平偏移,它告诉浏览器将阴影从盒容器向右移动1像素.第二个值1px则是浏览器从盒模型的边界向右移动1像素.</p>
+<p>IE8以及以前的版本不支持box-shadow属性,正如渐变一样.你可以使用IE的滤镜来实现这种方法.</p>
+<h4 id="text-shadow">text-shadow</h4>
+<p>text-shadow: 文字阴影,首先不是所有的文本都应该加上阴影效果的,影响到页面可用性的反面教材不胜枚举.</p>
+<pre><code><span class="keyword">text</span>-shadow: <span class="number">1</span>px <span class="number">1</span>px <span class="number">1</span>px hsla(<span class="number">0</span>, <span class="number">0</span><span class="variable">%,</span> <span class="number">100</span><span class="variable">%,</span> <span class="number">.7</span>);
+</code></pre><p>text-shadow是文本模块的一部分<br>text-shadow原属于CSS2,CSS2.1中移除了它,CSS3中又回来了.</p>
+<p>当然如果IE要实现这效果,那么就要使用滤镜了.而非IE的浏览器,Opera,Chrome,Firefox和Safari都支持该属性.但是IE是不支持该属性的,针对IE的兼容性方案是你可以使用IE的滤镜.</p>
+<h4 id="transform">transform</h4>
+<p>transform变形,translate是3D变形的一部分,你可以在(<a href="http://www.w3.org/tr/css3-3d-transform" target="_blank">http://www.w3.org/tr/css3-3d-transform</a>) 它,也可以在2D变形上找到它(<a href="http://www.w3.org/tr/css3-2d-transform" target="_blank">http://www.w3.org/tr/css3-2d-transform</a>) 上找到它. 所有的2D函数也包含3D规范,因此你可以只用查阅3D规范即可.</p>
+<p>(2D变形)浏览器对变形的支持:</p>
+<ol>
+<li><p>IE不支持,</p>
+</li>
+<li><p>Opera支持,需要-o-前缀,Firefox支持,但是需要-moz-,chrome和Safira支持,但需要-webkit-前缀</p>
+</li>
+</ol>
+<p>(3D变形)浏览器的支持:</p>
+<ol>
+<li><p>IE,Opera,Firefox,Chrome都不支持</p>
+</li>
+<li><p>Safari支持,需要-webkit-前缀</p>
+</li>
+</ol>
+<p>代码:</p>
+<pre><code><span class="string">.</span><span class="comment">sgsheg</span> <span class="comment">{</span>
+    <span class="literal">-</span><span class="comment">moz</span><span class="literal">-</span><span class="comment">transform:</span> <span class="comment">rotate(</span><span class="literal">-</span><span class="comment">5deg);</span>
+    <span class="literal">-</span><span class="comment">o</span><span class="literal">-</span><span class="comment">transform:</span> <span class="comment">rotate(</span><span class="literal">-</span><span class="comment">5deg);</span>
+    <span class="literal">-</span><span class="comment">webkit</span><span class="literal">-</span><span class="comment">transform:</span> <span class="comment">rotate(</span><span class="literal">-</span><span class="comment">5deg);</span>
+    <span class="comment">transform:</span> <span class="comment">rotate(</span><span class="literal">-</span><span class="comment">5deg);</span>   <span class="comment">//没有任何浏览器支持直接使用transform属性</span><span class="string">,</span><span class="comment">为了以后的兼容性</span>
+<span class="comment">}</span>
+</code></pre><p><strong> 当然你不会对所有的页面文本使用倾斜和旋转效果,那样绝对会影响可读性.但少量的使用变形会替代需要用图片或flash才能完成的的文字效果,能确实提高效果.</strong></p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  
+  <div class="tags">
+    <a href="/tags/css3/">css3</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</div>
+  </div>
+  <div class="widget-wrapper">
+    <aside id="sidebar">
+  
+  
+    
+      
+      
+    
+      
+      
+
+<div class="widget tag first">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/css,性能/">css,性能</a><small>1</small></li>
+  
+    <li><a href="/tags/css3/">css3</a><small>1</small></li>
+  
+    <li><a href="/tags/emacs,begin/">emacs,begin</a><small>1</small></li>
+  
+    <li><a href="/tags/linux配置查询/">linux配置查询</a><small>1</small></li>
+  
+    <li><a href="/tags/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/tags/scp,ssh/">scp,ssh</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu/">ubuntu</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu,tip/">ubuntu,tip</a><small>1</small></li>
+  
+    <li><a href="/tags/ubuntu,解压/">ubuntu,解压</a><small>1</small></li>
+  
+    <li><a href="/tags/个人成长/">个人成长</a><small>1</small></li>
+  
+    <li><a href="/tags/代码的未来/">代码的未来</a><small>1</small></li>
+  
+    <li><a href="/tags/响应式设计/">响应式设计</a><small>1</small></li>
+  
+    <li><a href="/tags/我编程,我快乐/">我编程,我快乐</a><small>1</small></li>
+  
+    <li><a href="/tags/敬畏之心/">敬畏之心</a><small>1</small></li>
+  
+    <li><a href="/tags/新年你好/">新年你好</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+    
+      
+      
+
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/css,性能/" style="font-size: NaNpx;">css,性能</a><a href="/tags/css3/" style="font-size: NaNpx;">css3</a><a href="/tags/emacs,begin/" style="font-size: NaNpx;">emacs,begin</a><a href="/tags/linux配置查询/" style="font-size: NaNpx;">linux配置查询</a><a href="/tags/nginx/" style="font-size: NaNpx;">nginx</a><a href="/tags/scp,ssh/" style="font-size: NaNpx;">scp,ssh</a><a href="/tags/ubuntu/" style="font-size: NaNpx;">ubuntu</a><a href="/tags/ubuntu,tip/" style="font-size: NaNpx;">ubuntu,tip</a><a href="/tags/ubuntu,解压/" style="font-size: NaNpx;">ubuntu,解压</a><a href="/tags/个人成长/" style="font-size: NaNpx;">个人成长</a><a href="/tags/代码的未来/" style="font-size: NaNpx;">代码的未来</a><a href="/tags/响应式设计/" style="font-size: NaNpx;">响应式设计</a><a href="/tags/我编程,我快乐/" style="font-size: NaNpx;">我编程,我快乐</a><a href="/tags/敬畏之心/" style="font-size: NaNpx;">敬畏之心</a><a href="/tags/新年你好/" style="font-size: NaNpx;">新年你好</a>
+  </div>
+</div>
+
+    
+      
+      
+
+<div class="widget recent-posts">
+  <h3 class="title">最近的文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">2014-01-06-代码的未来阅读笔记&lt;上&gt;</a>
+      </li>
+    
+      <li>
+        <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/08/2013-12-08-响应式设计/">开始响应式布局之旅</a>
+      </li>
+    
+      <li>
+        <a href="/2013/12/01/2013-12-01-我编程,我快乐/">《我编程 我快乐》阅读笔记</a>
+      </li>
+    
+  </ul>
+</div>
+
+    
+      
+      
+
+<div class="widget blogroll first newline">
+  <h3 class="title">友情链接</h3>
+  <ul class="entry">
+  
+    
+    <li><a href="http://heroicyang.com/" target="_blank">Heroic Yang&#39;s Blog</a></li>
+  
+  </ul>
+</div>
+
+    
+  
+</aside>
+<div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2014 <a href="/">sgsheg</a>
+  
+</div>
+<div class="theme-copyright">
+  I am sgsheg!
+</div>
+<div class="clearfix"></div>
+</footer>
+  <script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var disqus_shortname = 'sgsheg';
+
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

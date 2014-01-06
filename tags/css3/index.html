@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>归档：2014/1 | sgsheg</title>
+  <title>css3 | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -44,7 +44,7 @@
 </nav>
 <div class="clearfix"></div></header>
     <div class="content">
-<h2 class="archive-title">2014/1</h2>
+<h2 class="archive-title tag">css3</h2>
 
 
   
@@ -52,85 +52,43 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2014-01-06T09:09:22.000Z"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">1月 6 2014</a></time>
+      <time datetime="2013-11-29T00:00:00.000Z"><a href="/2013/11/29/2013-11-29-css3指南/">11月 29 2013</a></time>
     
     
   
-    <h1 class="title"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">2014-01-06-代码的未来阅读笔记&lt;上&gt;</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <ol>
-<li><p>编程的本质在于”思考”!编程不是和计算机打交道,而是对象是人类,因此这是个非常”有人味”的工作.</p>
-</li>
-<li><p>我喜欢编程,多少年来从未厌倦,这其中最大的理由,就是因为我把编程看作是一项创造性的工作吧!</p>
-</li>
-<li><p>摩尔定律是由美国因特尔公司创始人之一的高登◇摩尔于40年前的1965年,在其发表的论文中提出的,这个定律的内容如下:LSI中的晶体数量每18个月增加一倍. </p>
-</li>
-<li><p>然而,邮件基础技术却是出人意料地古老.世界上第一封电子邮件是在1971年发送的,而现在包括手机邮件在内所遵循的RFC822格式则是在1982年定制的,差不多是距今30年前的东西了.此外,现在依然作为主流而被广泛使用的TCP/IP互联网通信协议也差不多在那个时候定义的.<br>读一读《圣经》之类的古典著作你就会惊奇地发现，人类从几千年到现在所纠结的那些事情几乎没有什么变化.从人类本质上来看,技术的进步只不过是些细枝末节的改变罢了.</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/#more" class="more-link">Read More</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-01-01T00:00:00.000Z"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">1月 1 2014</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a></h1>
+    <h1 class="title"><a href="/2013/11/29/2013-11-29-css3指南/">css3实用指南阅读笔记1</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h3 id="-91cd-65b0-5b89-88c5-Ubuntu-5e38-7528-8f6f-4ef6-5c0f-8bb0-">重新安装Ubuntu常用软件小记</h3>
+      <h3 id="css3-5b9e-7528-6307-5357-9605-8bfb-7b14-8bb0-">css3实用指南阅读笔记</h3>
+<h4 id="-5199-5728-524d-9762-">写在前面</h4>
+<p><strong>尽可能广泛的受众提供尽可能优质的体验</strong></p>
+<p><strong>仅仅因为部分人不愿意或者不能升级浏览器,却让使用新型浏览器的用户无法享受CSS3所提供的伟大技术,这是毫无道理可言的</strong></p>
+<p><strong> 更少的标记和图片意味着用户需要下载的内容会更少,页面加载会更快.更少的图片,脚本和flash文件也就意味着更少的HTTP请求数,这就是提高页面加载速度的最佳方法之一.</strong></p>
+<p><strong> 某些图形化的CSS3技术,比如渐变,能够减少HTTP请求,但可能要求浏览器执行更多的工作来渲染,这就可能导致浏览器响应缓慢,并减少可用性.</strong></p>
+<p><strong> 因此不要随意滥用复杂的特性,并要完整地测试实现的那些特效.</strong></p>
+<p><strong> 有时候成功的使用CSS3最主要的阻碍反而不是浏览器的支持度,而是来自于客户或者老板的犹疑.</strong></p>
+<hr>
+<p>常见的CSS属性的浏览器前缀:</p>
 <ol>
-<li><p>更新源</p>
-<pre><code> <span class="built_in">sudo</span> vi /etc/apt/sources.list 
-</code></pre></li>
-</ol>
-<p>使用网易163源</p>
-<pre><code>deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise main universe restricted multiverse
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise main universe restricted multiverse
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-security universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-security universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-updates universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-proposed universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-proposed universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-backports universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-backports universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-updates universe main multiverse restricted
-</code></pre><p>更新后，</p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> <span class="keyword">update</span> </span>
-</code></pre>
+<li><p>-ms-     Trident         Internet Explorer</p>
+</li>
+<li><p>-moz-    Mozilla         Firefox</p>
+</li>
+<li><p>-o-*     Presto          Opera,Opera Mobile,Opera Mini,NIntendo wii浏览器   </p>
+</li>
+<li><p>-webkit- Webkit          Safari,Safari IOS,Chrome,Android浏览器   </p>
+
     
   </div>
   <footer class="end-sep">
     
       
         <div class="alignleft">
-          <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/#more" class="more-link">Read More</a>
+          <a href="/2013/11/29/2013-11-29-css3指南/#more" class="more-link">Read More</a>
         </div>
       
       

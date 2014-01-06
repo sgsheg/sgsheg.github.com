@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>归档：2014/1 | sgsheg</title>
+  <title>第 3 页 | 归档：2013 | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -44,7 +44,7 @@
 </nav>
 <div class="clearfix"></div></header>
     <div class="content">
-<h2 class="archive-title">2014/1</h2>
+<h2 class="archive-title">2013</h2>
 
 
   
@@ -52,33 +52,73 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2014-01-06T09:09:22.000Z"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">1月 6 2014</a></time>
+      <time datetime="2013-11-04T00:00:00.000Z"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">11月 4 2013</a></time>
     
     
   
-    <h1 class="title"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">2014-01-06-代码的未来阅读笔记&lt;上&gt;</a></h1>
+    <h1 class="title"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">Ubuntu解压乱码问题</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <ol>
-<li><p>编程的本质在于”思考”!编程不是和计算机打交道,而是对象是人类,因此这是个非常”有人味”的工作.</p>
-</li>
-<li><p>我喜欢编程,多少年来从未厌倦,这其中最大的理由,就是因为我把编程看作是一项创造性的工作吧!</p>
-</li>
-<li><p>摩尔定律是由美国因特尔公司创始人之一的高登◇摩尔于40年前的1965年,在其发表的论文中提出的,这个定律的内容如下:LSI中的晶体数量每18个月增加一倍. </p>
-</li>
-<li><p>然而,邮件基础技术却是出人意料地古老.世界上第一封电子邮件是在1971年发送的,而现在包括手机邮件在内所遵循的RFC822格式则是在1982年定制的,差不多是距今30年前的东西了.此外,现在依然作为主流而被广泛使用的TCP/IP互联网通信协议也差不多在那个时候定义的.<br>读一读《圣经》之类的古典著作你就会惊奇地发现，人类从几千年到现在所纠结的那些事情几乎没有什么变化.从人类本质上来看,技术的进步只不过是些细枝末节的改变罢了.</p>
+      <h3 id="Ubuntu_-538b-7f29-4e71-7801-95ee-9898-">Ubuntu 压缩乱码问题</h3>
+<p>Ubuntu在解压中文文件时候解决方案  </p>
+<p>1.<strong>zip解压中文乱码</strong><br>window下zip后的文件，在Ubuntu上unzip后乱码.</p>
+<pre><code><span class="comment">unzip</span> <span class="literal">-</span><span class="comment">O</span> <span class="comment">CP936</span> <span class="comment">xxx</span><span class="string">.</span><span class="comment">zip</span> <span class="literal">-</span><span class="comment">d</span> <span class="comment">sun/</span>
+</code></pre><p>为了以后方便还是来个alias吧</p>
+<pre><code><span class="comment">alias</span> <span class="comment">unzip</span><span class="literal">-</span><span class="comment">gbk</span> <span class="comment">=</span> <span class="comment">unzip</span> <span class="literal">-</span><span class="comment">O</span> <span class="comment">CP936</span>
+</code></pre><p>2.<strong>中文文件乱码问题,Ubuntu对中文的支持已经很好了.</strong><br>比如这样的文件:    </p>
+<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][<span class="number">161</span>µçÓ°ÍøDY161.COM]
+</code></pre><p>有效的办法：<br><strong> 使用convmv来进行转换:</strong><br>具体步骤:<br> 1.安装convmv     </p>
+<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> install convmv </span>
+</code></pre><p> 2.转换开始<br>       <strong>保险起见，将要更改的文件复制到一个空的目录里面</strong><br>a.   这个属于基本的.</p>
+<pre><code>  <span class="comment">convmv</span> <span class="comment">*</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">gbk</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">utf8</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span>
+</code></pre><p>b.  &lt;<strong>这个更管用</strong>&gt;  </p>
+<pre><code>  <span class="comment">convmv</span> <span class="literal">-</span><span class="comment">r</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">utf8</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">iso88591</span> <span class="comment">*</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">nosmart</span> <span class="comment">&amp;&amp;</span> <span class="comment">convmv</span> <span class="literal">-</span><span class="comment">r</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">gbk</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">utf8</span> <span class="comment">*</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">nosmart</span>
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
 
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <time datetime="2013-11-03T00:00:00.000Z"><a href="/2013/11/03/2013-11-03-从离开到进入创业公司/">11月 3 2013</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/11/03/2013-11-03-从离开到进入创业公司/">从离开到进入创业公司</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h4 id="-5f00-59cb-7684-7b2c-4e00-7bc7-">开始的第一篇</h4>
+<p>晚上,在卫生间看到了[小道君]的一篇微信文章,我们要从[员工的辞职信息里面看到别的信息].于是才有了此文!</p>
+<p>我想这样开始,我是12年才开始真正意义上的接触互联网.大学时代学的很多,但都不精巧.大学毕业后,才知道一个事实,活着,严格意义上好好的过着自己想过的生活是有点那个什么了/</p>
+<hr>
+<pre><code><span class="string">"孩子,你想多了! 做事情,你做好一件事情已经成功了!莫要贪多,贪多嚼不烂"</span><span class="exclamation_mark">!</span>
+</code></pre><p>12年,第一家公司.这家公司严格意义上并非一家真正的互联网公司.老板的企业文化是[我要你们像流水线工人一般,好好干],你猜我想到了什么!台湾首富[郭台铭]的富士康.毕竟我在那里呆过,不符合人道.玩计算机的,都知道”freedom””opensource”是追求,但是至少在这里我感觉不到编码的快乐.如果你还在这样的公司,我可以肯定告诉你,你还是换家公司吧!再高的工资都给不了你快感!中间,有幸当上了项目负责人,但项目负责人不是项目经理,这是一个不讨好的工作,当年被别人面试的时候,发誓自己有一天要把这口气要回来,是不是有点小马哥哥的气势,可是当我听到[熟练使用notepad++],我就开始忍不住骂街了,亲,你好歹也说个[熟练使用VIM或者是Emacs]啊!<br>
     
   </div>
   <footer class="end-sep">
     
       
         <div class="alignleft">
-          <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/#more" class="more-link">Read More</a>
+          <a href="/2013/11/03/2013-11-03-从离开到进入创业公司/#more" class="more-link">Read More</a>
         </div>
       
       
@@ -93,45 +133,31 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2014-01-01T00:00:00.000Z"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">1月 1 2014</a></time>
+      <time datetime="2013-09-20T09:19:24.000Z"><a href="/2013/09/20/2013-09-20-linux查询配置信息/">9月 20 2013</a></time>
     
     
   
-    <h1 class="title"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a></h1>
+    <h1 class="title"><a href="/2013/09/20/2013-09-20-linux查询配置信息/">2013-09-20-linux查询配置信息</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h3 id="-91cd-65b0-5b89-88c5-Ubuntu-5e38-7528-8f6f-4ef6-5c0f-8bb0-">重新安装Ubuntu常用软件小记</h3>
+      <h3 id="linux-4e0b-67e5-8be2-7535-8111-4fe1-606f-">linux下查询电脑信息</h3>
 <ol>
-<li><p>更新源</p>
-<pre><code> <span class="built_in">sudo</span> vi /etc/apt/sources.list 
+<li><p>查询linux内核         </p>
+<pre><code> `uname <span class="operator">-a</span>` 
+</code></pre></li>
+<li><p>查看电脑CPU    </p>
+<pre><code> <span class="code">`cat   /proc/cpuinfo`</span>
 </code></pre></li>
 </ol>
-<p>使用网易163源</p>
-<pre><code>deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise main universe restricted multiverse
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise main universe restricted multiverse
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-security universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-security universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-updates universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-proposed universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-proposed universe main multiverse restricted
-deb <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-backports universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-backports universe main multiverse restricted
-deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rrors<span class="number">.163</span>.com<span class="regexp">/ubuntu/</span> precise-updates universe main multiverse restricted
-</code></pre><p>更新后，</p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> <span class="keyword">update</span> </span>
-</code></pre>
+
     
   </div>
   <footer class="end-sep">
     
-      
-        <div class="alignleft">
-          <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/#more" class="more-link">Read More</a>
-        </div>
       
       
     
@@ -143,6 +169,8 @@ deb-src <span class="attribute">http</span>:<span class="regexp">//mi</span>rror
   
 
   <nav id="pagination">
+  
+    <a href="/archives/2013/page/2/" class="prev">上一页</a>
   
   
   <div class="clearfix"></div>
