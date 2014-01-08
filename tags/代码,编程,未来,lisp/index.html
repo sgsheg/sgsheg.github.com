@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>css,性能 | sgsheg</title>
+  <title>代码,编程,未来,lisp | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -44,7 +44,7 @@
 </nav>
 <div class="clearfix"></div></header>
     <div class="content">
-<h2 class="archive-title tag">css,性能</h2>
+<h2 class="archive-title tag">代码,编程,未来,lisp</h2>
 
 
   
@@ -52,81 +52,54 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-16T00:00:00.000Z"><a href="/2013/11/16/2013-11-16-关注css性能问题/">11月 16 2013</a></time>
+      <time datetime="2014-01-08T00:00:00.000Z"><a href="/2014/01/08/2014-01-08-代码的未来下/">1月 8 2014</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/16/2013-11-16-关注css性能问题/">CSS性能问题</a></h1>
+    <h1 class="title"><a href="/2014/01/08/2014-01-08-代码的未来下/">《代码的未来》阅读下</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h4 id="CSS-6027-80fd-95ee-9898-">CSS性能问题</h4>
-<p>与网页接触很久了,从最初的了解信息,到后来的developer.最近的两个月内PHP写的少了,less和js倒是写的不少了,虽然服务器上将less解析为css的脚本是我写的,无奈在前端开发中又岂止当初的浮动,盒子模型.<code>less</code>和<code>sass</code>的出现,让CSS的书写更加顺手.</p>
-<p>CSS的渲染速度决定于哪里?这个因素很大.对于php来说,smarty渲染,网络速度,页面加载速度,有很多的因素.但不管如何,知道CSS的一些好写法,未尝不可.要不然,像CSS3这样的屠龙刀,你要用它劈柴,呵呵,你还是换个吧,这么重的玄铁,还挺费手!</p>
-<h2 id="-770b-5b8c-4ee5-540e-2c-603b-7ed3-5982-4e0b-3a-">看完以后,总结如下:</h2>
-<p>开头第一句话,</p>
-<blockquote>
-<p>Put CSS in the document head!!!</p>
-</blockquote>
+      <hr>
 <ol>
-<li><p>id选择器和class选择器上,多数人觉得id比class快,但事实上二者的区别不大.<strong>可以不做考虑</strong> </p>
+<li><p>作为系统描述语言的C和C++,作为商务的语言而入日中天的Java,以及在web领域中十分热门的Ruby,perl,Python,PHP等脚本语言,都属于主流语言.这些语言在成长过程中都吸收了过去一些语言的优点,例如Java借鉴了C++,Smalltalk和Lisp的优点,而Ruby则是在吸收了过去语言的基础上而独自发展的语言.</p>
 </li>
-<li><p>CSS3的绚丽特性犹如小米,才是页面渲染的最大考验.animation和@font-face,请谨慎使用.对于可以不使用CSS3属性,比如<code>text-shadow</code>,那就尽量不使用.</p>
+<li><p>仅仅将过程进行抽象化还远远不够.几乎所有的过程都需要进行一定的输入输出操作,而不是与数据无关.在数据抽象化的延长线上,就自然而然产生了面向对象编程的概念.所谓抽象,就是抽象化数据本身.</p>
 </li>
-<li><p>对于<code>ul &gt; li &gt;a[title=&quot;sgsheg&quot;]</code>这样的代码,最先读到的部分是<code>a[title=&quot;sgsheg&quot;]</code> </p>
+<li><p>因此面向对象和数据抽象化之间仅仅隔了薄薄的一层纸.21世纪面向对象已经是常识了.</p>
 </li>
-<li><p>选择器的效率,从高往低来讲,依次是<code>id &gt; class &gt; tag &gt; universal</code>. </p>
+<li><p>讲述软件开发的一本名著《人月神话》作者写到:”无论使用什么语言,生产一条基本语句所需要的工数几乎是一定的”.也就是说,如果描述相同的算法,A语言需要1000行,B语言只需要10行,只要采用B语言生产效率就提高了100倍.</p>
 </li>
-<li><p>不需要在使用id选择器时,使用<code>ul#sgsheg</code>,因为id是唯一的.ID selectors are unique by definition. </p>
+<li><p>在我看来,编程语言的进化动机,不是工具和语言本身的简化,而是将通过这些工具和语言所得到的结果(解决方案)更简介地表达出来.</p>
 </li>
-<li><p>对于tag标签<code>ul</code>等,也要与<code>class</code>分开写. </p>
+<li><p>因此我预测100年后的编程语言的样子,我认为应该是下面三种情况:</p>
+<ol>
+<li>变化不大</li>
+<li>使用编程语言来编程这个行为本身不存在了.</li>
+<li>发明了采用更加抽象化写法的编程语言.&lt;更加强调what,而对于如何解决问题的How部分的细节,则不再需要人类去问.</li>
+</ol>
 </li>
-<li><p>后代选择器是性能最差的,譬如<code>ul &gt; li &gt; a {}</code>,这样的使用是很糟糕的.记住,浏览器的渲染是从右往左的.这样的代码,只会更加的累赘.Why not give the <code>a</code> an class to render?对于这样的,为什么不给它个class,<code>.alink { color: red}</code> </p>
+<li><p>闭包-编程语言的新潮流.我们来比较以下四种语言.Java,Javascript,Ruby和Go.</p>
 </li>
-<li><p>在浏览器渲染页面时候,如果出现错误,那么它就会跳过这段代码,继续进行下面的.</p>
+<li><p>在这四门语言中,Java和Go是比较侧重静态一侧的语言,而Ruby和Javascript则是比较偏重于动态一侧的语言.</p>
 </li>
-<li><p>在书写CSS的时候,you need think more,是否可以使用继承,继承才是<strong>代码艺术</strong>.就像jQuery那样,write less, do more.否则,我只能说”呵呵,请接受治疗!”</p>
+<li><p>在Javascript中与服务器进行异步通信的API叫做XMLHttpRequest,因此从它所衍生的手法被称为Ajax.</p>
 </li>
-<li><p>停止使用<code>@import</code>,请使用link引入.请把Javascript位于CSS之后. </p>
-</li>
-<li><p>在手机上,最牛叉的配置也赶不上十年前的电脑,所以开发手机网页要谨记,<strong>耍酷要看平台</strong>.</p>
+<li><p>Ruby能拥有现在的人气,基本上都是Ruby on Rails所作出的贡献.目前,作为服务器编程语言,Ruby的人气可谓无可撼动.</p>
 </li>
 </ol>
-<p>当然,原文部分在这里:</p>
-<ol>
-<li><p>Moving inline style blocks and <link> elements from the document body to the document head improves rendering performance.</p>
-</li>
-<li><p>Use the <link> tag instead of CSS @import</p>
-</li>
-<li><p>CSS 3 properties are some of the worst offenders when it comes to page performance. Especially animations and @font-face. Use them wisely.</p>
-</li>
-<li><p>Generally speaking, if a page is slow to resize it’s likely a layout property (float, fluid width, etc.) and if it’s slow to scroll it’s likely an aesthetic property (such as shadows and gradients) that’s slowing the page down.</p>
-</li>
-<li><p>Mobile is a thing and even the best mobile phones aren’t as powerful as the best computers from a decade ago.</p>
-</li>
-</ol>
-<hr>
-<p><em>Why not try a test?</em></p>
-<p>更多详情:<br><a href="https://github.com/andyedinborough/stress-css" title="Stress CSS" target="_blank">Stress Css</a></p>
-<blockquote>
-<p>This project is a bookmarklet for stress testing the CSS on any given webpage</p>
-</blockquote>
-<p><a href="https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors" title="Google Developers" target="_blank">Google Developers</a></p>
-<blockquote>
-<p>Optimize browser rendering </p>
-</blockquote>
-<p><a href="http://boagworld.com/dev/why-you-should-care-about-css-page-performance/" title="Care-about-css-page-performance" target="_blank">You should care about css preformance</a> </p>
-<blockquote>
-<p>As such, it’s important to make sure that our websites perform at their best, both for business reasons and as a matter of professional pride.</p>
-</blockquote>
 
     
   </div>
   <footer class="end-sep">
     
+      
+        <div class="alignleft">
+          <a href="/2014/01/08/2014-01-08-代码的未来下/#more" class="more-link">Read More</a>
+        </div>
       
       
     
