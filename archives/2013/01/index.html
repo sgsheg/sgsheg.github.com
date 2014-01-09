@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>nginx的使用 | sgsheg</title>
+  <title>归档：2013/1 | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -12,7 +12,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <meta property="og:title" content="nginx的使用"/>
+  
   <meta property="og:site_name" content="sgsheg"/>
 
   <link rel="alternate" href="/atom.xml" title="sgsheg" type="application/atom+xml">
@@ -43,63 +43,118 @@
   <div class="clearfix"></div>
 </nav>
 <div class="clearfix"></div></header>
-    <div class="content"><article class="post">
+    <div class="content">
+<h2 class="archive-title">2013/1</h2>
+
+
+  
+    <article class="post">
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-05T00:00:00.000Z"><a href="/2013/11/05/2013-11-05-ngxin使用1/">11月 5 2013</a></time>
+      <time datetime="2013-01-09T00:00:00.000Z"><a href="/2013/01/09/2014-01-09-web字体问题/">1月 9 2013</a></time>
     
     
   
-    <h1 class="title">nginx的使用</h1>
+    <h1 class="title"><a href="/2013/01/09/2014-01-09-web字体问题/">web字体问题</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h4 id="-5173-4e8e-nginx-7684-4f7f-7528-">关于nginx的使用</h4>
+      <h4 id="-4f60-53ef-4ee5-5728-WEB-4e0a-4f7f-7528-4efb-610f-5355-4f4d-6765-8bbe-7f6e-5b57-4f53-7684-5927-5c0f-2c-4f46-4e3b-8981-7684-65b9-6cd5-65e0-975e-4e09-79cd-3a-50cf-7d20-2c-em-548c-767e-5206-6bd4-">你可以在WEB上使用任意单位来设置字体的大小,但主要的方法无非三种:像素,em和百分比.</h4>
+<h5 id="-50cf-7d20-2c-6d3e-5361-28-pica-29-2c-82f1-5bf8-">像素,派卡(pica),英寸</h5>
 <ol>
-<li><p>在ubuntu下安装nginx：</p>
-<p> <code>sudo apt-get install nginx</code>  </p>
+<li><p>像素一直是人们喜欢使用的字体大小单位,原因很简单,无论浏览器如何设置字体大小,你都能对其进行精确的控制大小.如果你把页面的字体大小设置为18px,那么每个浏览器都会将字体准确地显示为18px.但这里就有问题了.要更改字体的大小,就需要一个一个去进行更改!当用户放大或者缩小页面的时候,浏览器一般会对页面内容有两种操作方式.</p>
+<p> a. 简简单单将所有东西都放大,所以当访问者放大页面的时候,包括文本在内的所有的元素都会变大.</p>
+<p> b. 浏览器只会调整文本的大小,页面其他元素则保持不变.</p>
 </li>
-<li><p>安装完成以后，在浏览器中打开<a href="http://127.0.0.1" target="_blank">http://127.0.0.1</a></p>
-<p>修改nginx的配置:</p>
-<p> <code>vim /etc/nginx/nginx.conf</code>  </p>
-<p> 保险起见，还是先备份以下:</p>
-<p> <code>sudo cp /etc/ngin.conf /etc/nginx/nginx.conf.back</code></p>
+<li><p>长期以来,b都是常见浏览器实现的方式,并且仍有一些浏览器还在使用这种方式实现缩放功能.注意: IE9以下版本的IE浏览器,字体被设置的浏览器,是不能调节页面字体大小的.</p>
 </li>
-<li><p>修改完nginx.conf以后，重新启动nginx</p>
-<p><code>sudo /etc/init.d/nginx restart</code></p>
+<li><p>无法调整字体大小的问题也同样出现在很多较老的,在触摸屏没有出现之前就有的设备上.</p>
+</li>
+<li><p>用像素来指定字体大小依然不是一种对未来特别友好的方式.由于不同的设备有着不同的屏幕大小和像素密度,因此以像素为单位的字体在这设备上看起来不错,但是另外一台设备上也许要么太大,要么太小.</p>
+</li>
+<li><p>使用像素作为字体大小的单位,是与web的灵活性原则背道而驰的原则.</p>
+</li>
+<li><p>使用派卡(pisa)或英寸,它们是绝对单位,因此设定多大就多大,与祖先元素的字体大小无关.在需要调整页面元素大小时候,必须一个一个地修改<code>font-size</code>,很麻烦.</p>
 </li>
 </ol>
-<p>当然也可以在nginx重新启动前使用-t来测试nginx.conf是否正确.</p>
-<pre><code><span class="comment">`nginx</span> <span class="literal">-</span><span class="comment">t`</span>  
-</code></pre><p>此命令还可以找到nginx.conf所处的位置,以下就是我的nginx提示信息:<br>    <code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code><br>    <code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
+<h5 id="em">em</h5>
+<ol>
+<li><p>使用em作为字体大小的单位是一种更加流行,更具有灵活性的方法!1em等于默认的字体大小.假设内容字体为16px,那么</p>
+<p> 1em=16px</p>
+<p> 2em=32px</p>
+</li>
+<li><p>em可以跨浏览器进行缩放,而且他们也是级联的.从简化维护上看,这样相对地指定元素的字体大小,意味着你只需要调整初始化时的基准,其余部分就会自动地进行调整,而且是按照比例调整的.<strong>但级联也会让事情变糟!</strong>但其变化时候,基准也会随着进行变化.</p>
+</li>
+<li><p>如果你跟某个元素设定了相对元素,则该元素的字体大小要相对于最近的”被设定的字体大小的”祖先元素决定.</p>
+</li>
+<li><p>要注意设置字体时候,必须事先规划好了.</p>
+</li>
+<li><p>今天设备的屏幕尺寸可谓千差万别,既有特大的显示屏,又有很小的手机屏幕.在这种形势下,更容易缩放的相对大小应该是首选.</p>
+</li>
+</ol>
+<h5 id="-767e-5206-6bd4-">百分比</h5>
+<ol>
+<li><p>以百分比为单位的字体也是可缩放的,而且也是级联的.</p>
+</li>
+<li><p>虽然,百分比和em没有太大区别,而且em逐渐成为了WEB中更受欢迎的字体度量单位,但其实没有什么技术的原因.</p>
+</li>
+<li><p>你可以通过在body元素上以百分比为单位指定基准字体大小来绕过这个问题.</p>
+<p> body {</p>
+<pre><code> <span class="attribute">font-size</span>: <span class="string">100%;</span>
+</code></pre><p> }</p>
+</li>
+<li><p>在大多数浏览器中,默认的字体大小都是16px.通过将body字体设置为100%,你就可以保证页面内容是可缩放的,而且不会有夸大的现象,之后你就可以使用em来设置其他元素的字体大小.</p>
+<p> body {</p>
+<pre><code> <span class="attribute">font-size</span>: <span class="string">100%;</span>
+ <span class="attribute">font-size</span>: <span class="string">1em;</span>
+</code></pre><p> }</p>
+</li>
+</ol>
+<h5 id="rem">rem</h5>
+<ol>
+<li><p>rem “root em”.rem和em的最大区别:rem的大小与html元素有关.</p>
+<p> body {</p>
+<pre><code> font-<span class="keyword">size</span>: <span class="number">100</span><span class="variable">%;</span>    <span class="comment">/* equates to ~16px*/</span>
+</code></pre><p> }<br> h1 {</p>
+<pre><code> <span class="attribute">font-size</span><span class="value">: <span class="number">1.5</span>em;</span>   <span class="comment">/* 24px / 16px*/</span>
+</code></pre><p> }<br> span {</p>
+<pre><code> <span class="attribute">font-size</span><span class="value">: <span class="number">1</span>rem;</span>    <span class="comment">/* 16px / 16px*/</span> <span class="comment">/*span继承了html元素字体大小*/</span>
+</code></pre><p> }</p>
+</li>
+<li><p>但是对于rem,移动浏览器有不支持的情况.桌面浏览器IE9+,chorme,IOS4.0+,Android2.1提供了相应的支持.但是Opera Mobile却不支持.</p>
+</li>
+<li><p>为了应对不支持的情况,可以额外设置一个以像素为单位的备用方案.</p>
+<p> span {</p>
+<pre><code> <span class="attribute">font-size</span><span class="value">: <span class="number">16</span>px;</span>    <span class="comment">/*  那些不支持rem的浏览器将会使用第一条像素声明,并忽略rem声明*/</span>
+ <span class="attribute">font-size</span><span class="value">: <span class="number">1</span>rem;</span>    <span class="comment">/*  支持rem的浏览器将会使用rem声明 */</span>
+</code></pre><p> }</p>
+</li>
+</ol>
 
     
   </div>
-  <footer>
+  <footer class="end-sep">
     
       
       
-  
-  <div class="tags">
-    <a href="/tags/nginx/">nginx</a>
-  </div>
-
     
     <div class="clearfix"></div>
   </footer>
 </article>
 
 
-<section id="comment">
-  <h1 class="title">留言</h1>
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
 </div>
   </div>
   <div class="widget-wrapper">
@@ -237,7 +292,7 @@
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   }());
 </script>
