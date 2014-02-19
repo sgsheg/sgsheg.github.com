@@ -28,7 +28,7 @@
   <div class="wrapper">
     <header id="header"><div class="title">
   <h1><a href="/">sgsheg</a></h1>
-  <p><a href="/">爱web,爱那妮!</a></p>
+  <p><a href="/">just for fun!!</a></p>
 </div>
 <nav class="nav">
   <ul>
@@ -66,7 +66,12 @@
 </li>
 <li><p>因此面向对象和数据抽象化之间仅仅隔了薄薄的一层纸.21世纪面向对象已经是常识了.</p>
 </li>
-<li><p>讲述软件开发的一本名著《人月神话》作者写到:”无论使用什么语言,生产一条基本语句所需要的工数几乎是一定的”.也就是说,如果描述相同的算法,A语言需要1000行,B语言只需要10行,只要采用B语言生产效率就提高了100倍.</p>
+</ol>
+<a id="more"></a>
+
+
+<ol>
+<li><p>讲述软件开发的一本名著《人月神话》作者写到:&quot;无论使用什么语言,生产一条基本语句所需要的工数几乎是一定的&quot;.也就是说,如果描述相同的算法,A语言需要1000行,B语言只需要10行,只要采用B语言生产效率就提高了100倍.</p>
 </li>
 <li><p>在我看来,编程语言的进化动机,不是工具和语言本身的简化,而是将通过这些工具和语言所得到的结果(解决方案)更简介地表达出来.</p>
 </li>
@@ -77,6 +82,8 @@
 <li>发明了采用更加抽象化写法的编程语言.&lt;更加强调what,而对于如何解决问题的How部分的细节,则不再需要人类去问.</li>
 </ol>
 </li>
+</ol>
+<ol>
 <li><p>闭包-编程语言的新潮流.我们来比较以下四种语言.Java,Javascript,Ruby和Go.</p>
 </li>
 <li><p>在这四门语言中,Java和Go是比较侧重静态一侧的语言,而Ruby和Javascript则是比较偏重于动态一侧的语言.</p>
@@ -86,8 +93,6 @@
 <li><p>Ruby能拥有现在的人气,基本上都是Ruby on Rails所作出的贡献.目前,作为服务器编程语言,Ruby的人气可谓无可撼动.</p>
 </li>
 </ol>
-<a id="more"></a>
-
 <ol>
 <li><p>Go是一种新兴的语言,但出身名门,由著名的UNIX开发者罗勃.派克和肯.汤普逊开发的,因此收到了广泛关注.</p>
 </li>
@@ -97,17 +102,17 @@
 </li>
 <li><p>在Ruby和Javascript中,元编程是十分自然的.</p>
 </li>
-<li><p>程序”对自身进行操作”也被称为”反射<Reflection>“.同样的意思,在Ruby大多被成为元编程,而在Java大多数叫做反射.</p>
+<li><p>程序&quot;对自身进行操作&quot;也被称为&quot;反射<Reflection>&quot;.同样的意思,在Ruby大多被成为元编程,而在Java大多数叫做反射.</p>
 </li>
-<li><p>在动态语言中,有一种叫做”鸭子类型”(Duck Typing)的风格被广泛使用.</p>
+<li><p>在动态语言中,有一种叫做&quot;鸭子类型&quot;(Duck Typing)的风格被广泛使用.</p>
 </li>
 <li><p>If it walks like a duck and quacks like a duck, it must be a duck!如果像鸭子一样走路,像鸭子一样呱呱叫,则它一定是一只鸭子.我们可以推导出一个规则,即如果某个对象的行为和鸭子一模一样,那无论它真正的实体是什么,我们都可以把看做是一只鸭子.也就说,不考虑某个对象到底是哪一个类的实例,而只关心其拥有怎样的行为.这就是鸭子类型.</p>
 </li>
 <li><p>写一个go的小例子.</p>
-<pre><code><span class="package"><span class="keyword">package</span> <span class="title">main</span>
-<span class="title">import</span> "<span class="title">fmt</span>"
-<span class="title">func</span>.<span class="title">main</span>() {</span>
-    printf(<span class="string">"hello,世界\n"</span>);
+<pre><code>package main
+import &quot;fmt&quot;
+func.main() {
+    printf(&quot;hello,世界\n&quot;);
 }
 
 cmd: go build test.go
@@ -117,7 +122,7 @@ cmd: test.exe
 </li>
 <li><p>else省略括号歧义的问题.在Perl的语法中也不允许省略花括号.说句题外话,Ruby在控制结构的划分中,没有使用花括号,而是使用了end,理由也是一样的.使用end的语言中来避免悬空导致的歧义.另外,Go语言中是没有while语法的.</p>
 </li>
-<li><p>google奉行”不作恶”(Don’t be evil)的信条,因此很多人觉得Go应该改名.</p>
+<li><p>google奉行&quot;不作恶&quot;(Don&#39;t be evil)的信条,因此很多人觉得Go应该改名.</p>
 </li>
 </ol>
 
@@ -218,6 +223,10 @@ cmd: test.exe
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
+      </li>
+    
+      <li>
         <a href="/2014/01/08/2014-01-08-代码的未来下/">《代码的未来》阅读下</a>
       </li>
     
@@ -231,10 +240,6 @@ cmd: test.exe
     
       <li>
         <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/08/2013-12-08-响应式设计/">开始响应式布局之旅</a>
       </li>
     
   </ul>

@@ -28,7 +28,7 @@
   <div class="wrapper">
     <header id="header"><div class="title">
   <h1><a href="/">sgsheg</a></h1>
-  <p><a href="/">爱web,爱那妮!</a></p>
+  <p><a href="/">just for fun!!</a></p>
 </div>
 <nav class="nav">
   <ul>
@@ -63,11 +63,11 @@
   
   <div class="entry">
     
-      <h3 id="-656c-754f-4e4b-5fc3-">敬畏之心</h3>
+      <h3 id="-">敬畏之心</h3>
 <ol>
 <li><p>一次康熙帝在宫中设坛祈祷,长跪三昼夜,日惟淡食,不御盐酱.到第四日,大雨如注,水满两靴,衣尽沾湿,步行回宫.其敬诚之心,诸臣莫不感动.</p>
 </li>
-<li><p>唐太宗说”朕每思出一言,行一事,必上畏皇天,下惧群臣”!</p>
+<li><p>唐太宗说&quot;朕每思出一言,行一事,必上畏皇天,下惧群臣&quot;!</p>
 </li>
 <li><p>然而,明君敬畏,昏君无惧.</p>
 </li>
@@ -103,10 +103,10 @@
   
   <div class="entry">
     
-      <h4 id="CSS-6027-80fd-95ee-9898-">CSS性能问题</h4>
+      <h4 id="css-">CSS性能问题</h4>
 <p>与网页接触很久了,从最初的了解信息,到后来的developer.最近的两个月内PHP写的少了,less和js倒是写的不少了,虽然服务器上将less解析为css的脚本是我写的,无奈在前端开发中又岂止当初的浮动,盒子模型.<code>less</code>和<code>sass</code>的出现,让CSS的书写更加顺手.</p>
 <p>CSS的渲染速度决定于哪里?这个因素很大.对于php来说,smarty渲染,网络速度,页面加载速度,有很多的因素.但不管如何,知道CSS的一些好写法,未尝不可.要不然,像CSS3这样的屠龙刀,你要用它劈柴,呵呵,你还是换个吧,这么重的玄铁,还挺费手!</p>
-<h2 id="-770b-5b8c-4ee5-540e-2c-603b-7ed3-5982-4e0b-3a-">看完以后,总结如下:</h2>
+<h2 id="-">看完以后,总结如下:</h2>
 <p>开头第一句话,</p>
 <blockquote>
 <p>Put CSS in the document head!!!</p>
@@ -128,7 +128,7 @@
 </li>
 <li><p>在浏览器渲染页面时候,如果出现错误,那么它就会跳过这段代码,继续进行下面的.</p>
 </li>
-<li><p>在书写CSS的时候,you need think more,是否可以使用继承,继承才是<strong>代码艺术</strong>.就像jQuery那样,write less, do more.否则,我只能说”呵呵,请接受治疗!”</p>
+<li><p>在书写CSS的时候,you need think more,是否可以使用继承,继承才是<strong>代码艺术</strong>.就像jQuery那样,write less, do more.否则,我只能说&quot;呵呵,请接受治疗!&quot;</p>
 </li>
 <li><p>停止使用<code>@import</code>,请使用link引入.请把Javascript位于CSS之后. </p>
 </li>
@@ -150,7 +150,8 @@
 </ol>
 <hr>
 <p><em>Why not try a test?</em></p>
-<p>更多详情:<br><a href="https://github.com/andyedinborough/stress-css" title="Stress CSS" target="_blank">Stress Css</a></p>
+<p>更多详情:
+<a href="https://github.com/andyedinborough/stress-css" title="Stress CSS" target="_blank">Stress Css</a></p>
 <blockquote>
 <p>This project is a bookmarklet for stress testing the CSS on any given webpage</p>
 </blockquote>
@@ -191,20 +192,21 @@
   
   <div class="entry">
     
-      <h4 id="Ubuntu-4f7f-7528-6280-5de7-1">Ubuntu使用技巧1</h4>
-<p>一年多来,都在Ubuntu上进行开发.Ubuntu可以说linux发行版中比较好用的一派,虽然比不上[苏西]的绚丽,但是已经足够使用.<br>Ubuntu是Debian的一个分支,安装软件方便简单.</p>
-<pre><code><span class="comment">sudo</span> <span class="comment">apt</span><span class="literal">-</span><span class="comment">get</span> <span class="comment">install</span> <span class="literal">+</span> <span class="comment">softname</span>
+      <h4 id="ubuntu-1">Ubuntu使用技巧1</h4>
+<p>一年多来,都在Ubuntu上进行开发.Ubuntu可以说linux发行版中比较好用的一派,虽然比不上[苏西]的绚丽,但是已经足够使用. 
+Ubuntu是Debian的一个分支,安装软件方便简单.</p>
+<pre><code>sudo apt-get install + softname
 </code></pre><p>当然我就把我常常用到的给列出来.</p>
 <p>Ubuntu快速卸载软件.</p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge</span>
+<pre><code>sudo apt-get purge
 </code></pre><p>来自于如下:</p>
-<pre><code>apt-get --purge remove <span class="keyword">...</span> is the the same as apt-get purge ..... 
-purge removes global configuration files only.It does note remove virtual machines,so it<span class="string">'s safe to use.</span>
+<pre><code>apt-get --purge remove ... is the the same as apt-get purge ..... 
+purge removes global configuration files only.It does note remove virtual machines,so it&#39;s safe to use.
 </code></pre><p>Ubuntu完全卸载libreOffice</p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge libreoffice*
-sudo apt-<span class="keyword">get</span> clean</span>
+<pre><code>sudo apt-get purge libreoffice*
+sudo apt-get clean
 </code></pre><p>Ubuntu卸载kazam.</p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> purge kazam</span>
+<pre><code>sudo apt-get purge kazam
 </code></pre><p>
     
   </div>
@@ -238,11 +240,11 @@ sudo apt-<span class="keyword">get</span> clean</span>
   
   <div class="entry">
     
-      <h3 id="scp-4e0b-8f7d-4e0a-4f20-6587-4ef6-">scp下载上传文件</h3>
+      <h3 id="scp-">scp下载上传文件</h3>
 <p>1.链接远端服务器下载scheme.sql,本地ip：192.168.1.2  </p>
-<pre><code>`scp xxx<span class="variable">@106</span>..<span class="symbol">:/trunk/db/scheme</span>.sql /home/sgsheg/db/`  
+<pre><code>`scp xxx@106..:/trunk/db/scheme.sql /home/sgsheg/db/`  
 </code></pre><p>2.将文件上传到服务器  </p>
-<pre><code>`scp test.sql xxx<span class="variable">@106</span>.xx.<span class="symbol">:/trunk/db`</span>
+<pre><code>`scp test.sql xxx@106.xx.:/trunk/db`
 </code></pre><p>注意 &nbsp;&nbsp;<strong>:</strong>&nbsp;&nbsp; 不要丢失</p>
 
     
@@ -273,7 +275,7 @@ sudo apt-<span class="keyword">get</span> clean</span>
   
   <div class="entry">
     
-      <h4 id="-5173-4e8e-nginx-7684-4f7f-7528-">关于nginx的使用</h4>
+      <h4 id="-nginx-">关于nginx的使用</h4>
 <ol>
 <li><p>在ubuntu下安装nginx：</p>
 <p> <code>sudo apt-get install nginx</code>  </p>
@@ -289,7 +291,7 @@ sudo apt-<span class="keyword">get</span> clean</span>
 </li>
 </ol>
 <p>当然也可以在nginx重新启动前使用-t来测试nginx.conf是否正确.</p>
-<pre><code><span class="comment">`nginx</span> <span class="literal">-</span><span class="comment">t`</span>  
+<pre><code>`nginx -t`  
 </code></pre><p>此命令还可以找到nginx.conf所处的位置,以下就是我的nginx提示信息:<br>    <code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code><br>    <code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
 
     
@@ -390,6 +392,10 @@ sudo apt-<span class="keyword">get</span> clean</span>
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
+      </li>
+    
+      <li>
         <a href="/2014/01/08/2014-01-08-代码的未来下/">《代码的未来》阅读下</a>
       </li>
     
@@ -403,10 +409,6 @@ sudo apt-<span class="keyword">get</span> clean</span>
     
       <li>
         <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/08/2013-12-08-响应式设计/">开始响应式布局之旅</a>
       </li>
     
   </ul>

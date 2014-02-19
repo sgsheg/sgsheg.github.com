@@ -28,7 +28,7 @@
   <div class="wrapper">
     <header id="header"><div class="title">
   <h1><a href="/">sgsheg</a></h1>
-  <p><a href="/">爱web,爱那妮!</a></p>
+  <p><a href="/">just for fun!!</a></p>
 </div>
 <nav class="nav">
   <ul>
@@ -63,11 +63,11 @@
   
   <div class="entry">
     
-      <h3 id="scp-4e0b-8f7d-4e0a-4f20-6587-4ef6-">scp下载上传文件</h3>
+      <h3 id="scp-">scp下载上传文件</h3>
 <p>1.链接远端服务器下载scheme.sql,本地ip：192.168.1.2  </p>
-<pre><code>`scp xxx<span class="variable">@106</span>..<span class="symbol">:/trunk/db/scheme</span>.sql /home/sgsheg/db/`  
+<pre><code>`scp xxx@106..:/trunk/db/scheme.sql /home/sgsheg/db/`  
 </code></pre><p>2.将文件上传到服务器  </p>
-<pre><code>`scp test.sql xxx<span class="variable">@106</span>.xx.<span class="symbol">:/trunk/db`</span>
+<pre><code>`scp test.sql xxx@106.xx.:/trunk/db`
 </code></pre><p>注意 &nbsp;&nbsp;<strong>:</strong>&nbsp;&nbsp; 不要丢失</p>
 
     
@@ -98,7 +98,7 @@
   
   <div class="entry">
     
-      <h4 id="-5173-4e8e-nginx-7684-4f7f-7528-">关于nginx的使用</h4>
+      <h4 id="-nginx-">关于nginx的使用</h4>
 <ol>
 <li><p>在ubuntu下安装nginx：</p>
 <p> <code>sudo apt-get install nginx</code>  </p>
@@ -114,7 +114,7 @@
 </li>
 </ol>
 <p>当然也可以在nginx重新启动前使用-t来测试nginx.conf是否正确.</p>
-<pre><code><span class="comment">`nginx</span> <span class="literal">-</span><span class="comment">t`</span>  
+<pre><code>`nginx -t`  
 </code></pre><p>此命令还可以找到nginx.conf所处的位置,以下就是我的nginx提示信息:<br>    <code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code><br>    <code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
 
     
@@ -145,20 +145,23 @@
   
   <div class="entry">
     
-      <h3 id="Ubuntu_-538b-7f29-4e71-7801-95ee-9898-">Ubuntu 压缩乱码问题</h3>
+      <h3 id="ubuntu-">Ubuntu 压缩乱码问题</h3>
 <p>Ubuntu在解压中文文件时候解决方案  </p>
-<p>1.<strong>zip解压中文乱码</strong><br>window下zip后的文件，在Ubuntu上unzip后乱码.</p>
-<pre><code><span class="comment">unzip</span> <span class="literal">-</span><span class="comment">O</span> <span class="comment">CP936</span> <span class="comment">xxx</span><span class="string">.</span><span class="comment">zip</span> <span class="literal">-</span><span class="comment">d</span> <span class="comment">sun/</span>
+<p>1.<strong>zip解压中文乱码</strong> 
+window下zip后的文件，在Ubuntu上unzip后乱码.</p>
+<pre><code>unzip -O CP936 xxx.zip -d sun/
 </code></pre><p>为了以后方便还是来个alias吧</p>
-<pre><code><span class="comment">alias</span> <span class="comment">unzip</span><span class="literal">-</span><span class="comment">gbk</span> <span class="comment">=</span> <span class="comment">unzip</span> <span class="literal">-</span><span class="comment">O</span> <span class="comment">CP936</span>
+<pre><code>alias unzip-gbk = unzip -O CP936
 </code></pre><p>2.<strong>中文文件乱码问题,Ubuntu对中文的支持已经很好了.</strong><br>比如这样的文件:    </p>
-<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][<span class="number">161</span>µçÓ°ÍøDY161.COM]
-</code></pre><p>有效的办法：<br><strong> 使用convmv来进行转换:</strong><br>具体步骤:<br> 1.安装convmv     </p>
-<pre><code>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> install convmv </span>
+<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][161µçÓ°ÍøDY161.COM]
+</code></pre><p>有效的办法：
+<strong> 使用convmv来进行转换:</strong>
+具体步骤:<br> 1.安装convmv     </p>
+<pre><code>sudo apt-get install convmv 
 </code></pre><p> 2.转换开始<br>       <strong>保险起见，将要更改的文件复制到一个空的目录里面</strong><br>a.   这个属于基本的.</p>
-<pre><code>  <span class="comment">convmv</span> <span class="comment">*</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">gbk</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">utf8</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span>
+<pre><code>  convmv * -f gbk -t utf8 --notest
 </code></pre><p>b.  &lt;<strong>这个更管用</strong>&gt;  </p>
-<pre><code>  <span class="comment">convmv</span> <span class="literal">-</span><span class="comment">r</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">utf8</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">iso88591</span> <span class="comment">*</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">nosmart</span> <span class="comment">&amp;&amp;</span> <span class="comment">convmv</span> <span class="literal">-</span><span class="comment">r</span> <span class="literal">-</span><span class="comment">f</span> <span class="comment">gbk</span> <span class="literal">-</span><span class="comment">t</span> <span class="comment">utf8</span> <span class="comment">*</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">notest</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">nosmart</span>
+<pre><code>  convmv -r -f utf8 -t iso88591 * --notest --nosmart &amp;&amp; convmv -r -f gbk -t utf8 * --notest --nosmart
 </code></pre>
     
   </div>
@@ -188,12 +191,13 @@
   
   <div class="entry">
     
-      <h4 id="-5f00-59cb-7684-7b2c-4e00-7bc7-">开始的第一篇</h4>
+      <h4 id="-">开始的第一篇</h4>
 <p>晚上,在卫生间看到了[小道君]的一篇微信文章,我们要从[员工的辞职信息里面看到别的信息].于是才有了此文!</p>
 <p>我想这样开始,我是12年才开始真正意义上的接触互联网.大学时代学的很多,但都不精巧.大学毕业后,才知道一个事实,活着,严格意义上好好的过着自己想过的生活是有点那个什么了/</p>
 <hr>
-<pre><code><span class="string">"孩子,你想多了! 做事情,你做好一件事情已经成功了!莫要贪多,贪多嚼不烂"</span><span class="exclamation_mark">!</span>
-</code></pre><p>12年,第一家公司.这家公司严格意义上并非一家真正的互联网公司.老板的企业文化是[我要你们像流水线工人一般,好好干],你猜我想到了什么!台湾首富[郭台铭]的富士康.毕竟我在那里呆过,不符合人道.玩计算机的,都知道”freedom””opensource”是追求,但是至少在这里我感觉不到编码的快乐.如果你还在这样的公司,我可以肯定告诉你,你还是换家公司吧!再高的工资都给不了你快感!中间,有幸当上了项目负责人,但项目负责人不是项目经理,这是一个不讨好的工作,当年被别人面试的时候,发誓自己有一天要把这口气要回来,是不是有点小马哥哥的气势,可是当我听到[熟练使用notepad++],我就开始忍不住骂街了,亲,你好歹也说个[熟练使用VIM或者是Emacs]啊!<br>
+<pre><code>&quot;孩子,你想多了! 做事情,你做好一件事情已经成功了!莫要贪多,贪多嚼不烂&quot;!
+</code></pre><p>12年,第一家公司.这家公司严格意义上并非一家真正的互联网公司.老板的企业文化是[我要你们像流水线工人一般,好好干],你猜我想到了什么!台湾首富[郭台铭]的富士康.毕竟我在那里呆过,不符合人道.玩计算机的,都知道&quot;freedom&quot;&quot;opensource&quot;是追求,但是至少在这里我感觉不到编码的快乐.如果你还在这样的公司,我可以肯定告诉你,你还是换家公司吧!再高的工资都给不了你快感!中间,有幸当上了项目负责人,但项目负责人不是项目经理,这是一个不讨好的工作,当年被别人面试的时候,发誓自己有一天要把这口气要回来,是不是有点小马哥哥的气势,可是当我听到[熟练使用notepad++],我就开始忍不住骂街了,亲,你好歹也说个[熟练使用VIM或者是Emacs]啊!
+
     
   </div>
   <footer class="end-sep">
@@ -294,6 +298,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
+      </li>
+    
+      <li>
         <a href="/2014/01/08/2014-01-08-代码的未来下/">《代码的未来》阅读下</a>
       </li>
     
@@ -307,10 +315,6 @@
     
       <li>
         <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/08/2013-12-08-响应式设计/">开始响应式布局之旅</a>
       </li>
     
   </ul>
