@@ -52,6 +52,63 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2014-02-22T14:49:45.000Z"><a href="/2014/02/22/再看提升网站性能最佳实践/">2月 22 2014</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <ol>
+<li><p>第一类 [内容]</p>
+<ul>
+<li><p>尽量减少HTTP请求</p>
+<ul>
+<li><p>合并文件，如果可能，合并你的css,js文件</p>
+</li>
+<li><p>使用css sprites合并你的图片</p>
+</li>
+<li><p>在某些特殊页面可以考虑使用图片地图(map)，但是不推荐</p>
+</li>
+<li><p>使用内联图像（data:URL scheme），目前多数浏览器尚未支持</p>
+</li>
+</ul>
+</li>
+<li><p>减少DNS查找</p>
+<ul>
+<li><p>一般情况下返回给定域名对应的IP地址会花费20到120毫秒的时间，而且在这个过程中都不会直到DNS查找完毕</p>
+</li>
+<li><p>缓存DNS</p>
+</li>
+<li><p>减少主机名的数量可以减少dns查找次数</p>
+</li>
+</ul>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2014/02/22/再看提升网站性能最佳实践/#more" class="more-link">Read More</a>
+        </div>
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2014-02-19T10:55:29.000Z"><a href="/2014/02/19/2014-02-19-website-developer/">2月 19 2014</a></time>
     
     
@@ -172,6 +229,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
       </li>
     
@@ -185,10 +246,6 @@
     
       <li>
         <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
       </li>
     
   </ul>

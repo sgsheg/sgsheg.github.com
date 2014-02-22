@@ -52,6 +52,63 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2014-02-22T14:49:45.000Z"><a href="/2014/02/22/再看提升网站性能最佳实践/">2月 22 2014</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <ol>
+<li><p>第一类 [内容]</p>
+<ul>
+<li><p>尽量减少HTTP请求</p>
+<ul>
+<li><p>合并文件，如果可能，合并你的css,js文件</p>
+</li>
+<li><p>使用css sprites合并你的图片</p>
+</li>
+<li><p>在某些特殊页面可以考虑使用图片地图(map)，但是不推荐</p>
+</li>
+<li><p>使用内联图像（data:URL scheme），目前多数浏览器尚未支持</p>
+</li>
+</ul>
+</li>
+<li><p>减少DNS查找</p>
+<ul>
+<li><p>一般情况下返回给定域名对应的IP地址会花费20到120毫秒的时间，而且在这个过程中都不会直到DNS查找完毕</p>
+</li>
+<li><p>缓存DNS</p>
+</li>
+<li><p>减少主机名的数量可以减少dns查找次数</p>
+</li>
+</ul>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2014/02/22/再看提升网站性能最佳实践/#more" class="more-link">Read More</a>
+        </div>
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2014-02-19T10:55:29.000Z"><a href="/2014/02/19/2014-02-19-website-developer/">2月 19 2014</a></time>
     
     
@@ -227,49 +284,6 @@ deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse 
 
 
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-12-31T00:00:00.000Z"><a href="/2013/12/31/2013-12-31-新年你好/">12月 31 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h4 id="-">新年,你好!</h4>
-<p>慢慢地,慢慢地,踏入2014年了.</p>
-<p>你好,2014.</p>
-<p>虽然在年末的最后一个月,从创业公司离职了.一个人,离开了团队,内心很不甘,无奈月有圆缺.离开项目后,在年末找工作,确实是有一定的冒犯的.师傅给我你丫真二,怎么不在离开前去找好公司再跳呢?徒弟,笑了笑,人生嘛,我都认了.</p>
-<p>回顾2013,有惊喜,有痛苦.经历了很多的一些难忘的事,感谢有你,感谢有你们,感谢身边所有的人.谢谢你们的帮助,我才能好好的成长.</p>
-<p>这一年,从国外社区吸取文化,
-这一年,从知乎上看到了段子,
-这一年,从工作上明白了工作,
-这一年,从北京获得了好多的温暖,
-这一年,是丰收的一年,
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2013/12/31/2013-12-31-新年你好/#more" class="more-link">Read More</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -353,6 +367,10 @@ deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse 
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
       </li>
     
@@ -366,10 +384,6 @@ deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse 
     
       <li>
         <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
       </li>
     
   </ul>

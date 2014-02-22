@@ -52,6 +52,46 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2013-11-27T00:00:00.000Z"><a href="/2013/11/27/2013-11-27-敬畏之心/">11月 27 2013</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/11/27/2013-11-27-敬畏之心/">敬畏之心</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="-">敬畏之心</h3>
+<ol>
+<li><p>一次康熙帝在宫中设坛祈祷,长跪三昼夜,日惟淡食,不御盐酱.到第四日,大雨如注,水满两靴,衣尽沾湿,步行回宫.其敬诚之心,诸臣莫不感动.</p>
+</li>
+<li><p>唐太宗说&quot;朕每思出一言,行一事,必上畏皇天,下惧群臣&quot;!</p>
+</li>
+<li><p>然而,明君敬畏,昏君无惧.</p>
+</li>
+<li><p>人,不可以没有畏惧之心.</p>
+</li>
+</ol>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2013-11-16T00:00:00.000Z"><a href="/2013/11/16/2013-11-16-关注css性能问题/">11月 16 2013</a></time>
     
     
@@ -267,52 +307,6 @@ sudo apt-get clean
 
 
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-04T00:00:00.000Z"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">11月 4 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">Ubuntu解压乱码问题</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h3 id="ubuntu-">Ubuntu 压缩乱码问题</h3>
-<p>Ubuntu在解压中文文件时候解决方案  </p>
-<p>1.<strong>zip解压中文乱码</strong> 
-window下zip后的文件，在Ubuntu上unzip后乱码.</p>
-<pre><code>unzip -O CP936 xxx.zip -d sun/
-</code></pre><p>为了以后方便还是来个alias吧</p>
-<pre><code>alias unzip-gbk = unzip -O CP936
-</code></pre><p>2.<strong>中文文件乱码问题,Ubuntu对中文的支持已经很好了.</strong><br>比如这样的文件:    </p>
-<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][161µçÓ°ÍøDY161.COM]
-</code></pre><p>有效的办法：
-<strong> 使用convmv来进行转换:</strong>
-具体步骤:<br> 1.安装convmv     </p>
-<pre><code>sudo apt-get install convmv 
-</code></pre><p> 2.转换开始<br>       <strong>保险起见，将要更改的文件复制到一个空的目录里面</strong><br>a.   这个属于基本的.</p>
-<pre><code>  convmv * -f gbk -t utf8 --notest
-</code></pre><p>b.  &lt;<strong>这个更管用</strong>&gt;  </p>
-<pre><code>  convmv -r -f utf8 -t iso88591 * --notest --nosmart &amp;&amp; convmv -r -f gbk -t utf8 * --notest --nosmart
-</code></pre>
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -398,6 +392,10 @@ window下zip后的文件，在Ubuntu上unzip后乱码.</p>
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
       </li>
     
@@ -411,10 +409,6 @@ window下zip后的文件，在Ubuntu上unzip后乱码.</p>
     
       <li>
         <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>第 2 页 | 归档：2013/11 | sgsheg</title>
+  <title>再看提升网站性能最佳实践 | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -12,7 +12,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  
+  <meta property="og:title" content="再看提升网站性能最佳实践"/>
   <meta property="og:site_name" content="sgsheg"/>
 
   <link rel="alternate" href="/atom.xml" title="sgsheg" type="application/atom+xml">
@@ -43,83 +43,236 @@
   <div class="clearfix"></div>
 </nav>
 <div class="clearfix"></div></header>
-    <div class="content">
-<h2 class="archive-title">2013/11</h2>
-
-
-  
-    <article class="post">
+    <div class="content"><article class="post">
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-06T00:00:00.000Z"><a href="/2013/11/06/2013-11-06-scp使用/">11月 6 2013</a></time>
+      <time datetime="2014-02-22T14:49:45.000Z"><a href="/2014/02/22/再看提升网站性能最佳实践/">2月 22 2014</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/06/2013-11-06-scp使用/">ssh/scp的使用</a></h1>
+    <h1 class="title">再看提升网站性能最佳实践</h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h3 id="scp-">scp下载上传文件</h3>
-<p>1.链接远端服务器下载scheme.sql,本地ip：192.168.1.2  </p>
-<pre><code>`scp xxx@106..:/trunk/db/scheme.sql /home/sgsheg/db/`  
-</code></pre><p>2.将文件上传到服务器  </p>
-<pre><code>`scp test.sql xxx@106.xx.:/trunk/db`
-</code></pre><p>注意 &nbsp;&nbsp;<strong>:</strong>&nbsp;&nbsp; 不要丢失</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-05T00:00:00.000Z"><a href="/2013/11/05/2013-11-05-ngxin使用1/">11月 5 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/05/2013-11-05-ngxin使用1/">nginx的使用</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h4 id="-nginx-">关于nginx的使用</h4>
-<ol>
-<li><p>在ubuntu下安装nginx：</p>
-<p> <code>sudo apt-get install nginx</code>  </p>
+      <ol>
+<li><p>第一类 [内容]</p>
+<ul>
+<li><p>尽量减少HTTP请求</p>
+<ul>
+<li><p>合并文件，如果可能，合并你的css,js文件</p>
 </li>
-<li><p>安装完成以后，在浏览器中打开<a href="http://127.0.0.1" target="_blank">http://127.0.0.1</a></p>
-<p>修改nginx的配置:</p>
-<p> <code>vim /etc/nginx/nginx.conf</code>  </p>
-<p> 保险起见，还是先备份以下:</p>
-<p> <code>sudo cp /etc/ngin.conf /etc/nginx/nginx.conf.back</code></p>
+<li><p>使用css sprites合并你的图片</p>
 </li>
-<li><p>修改完nginx.conf以后，重新启动nginx</p>
-<p><code>sudo /etc/init.d/nginx restart</code></p>
+<li><p>在某些特殊页面可以考虑使用图片地图(map)，但是不推荐</p>
+</li>
+<li><p>使用内联图像（data:URL scheme），目前多数浏览器尚未支持</p>
+</li>
+</ul>
+</li>
+<li><p>减少DNS查找</p>
+<ul>
+<li><p>一般情况下返回给定域名对应的IP地址会花费20到120毫秒的时间，而且在这个过程中都不会直到DNS查找完毕</p>
+</li>
+<li><p>缓存DNS</p>
+</li>
+<li><p>减少主机名的数量可以减少dns查找次数</p>
+</li>
+</ul>
+<a id="more"></a>
+</li>
+<li><p>避免跳转</p>
+<ul>
+<li><p>这里的跳转指的是301或者302.html文件在被加载前（图像，flash等）都不会被下载，所以跳转会拖延页面中所有元素，减低用户体验。</p>
+</li>
+<li><p>但是如果必须要跳转的话，最好方法是使用标准的3XXHTTP状态码，这主要确保“后退”按钮可以正确使用。</p>
+</li>
+<li><p>避免url有/时被忽略，因为带有/的网址包含301跳转</p>
+</li>
+</ul>
+</li>
+<li><p>缓存Ajax</p>
+<ul>
+<li>提高ajax性能的措施中最重要的方法就是使响应具有可缓存性，一般可通过为文件头指定Expires或Cache-Control来优化。</li>
+</ul>
+</li>
+<li><p>推迟加载</p>
+<ul>
+<li><p>仔细查看网页，那些内容是页面呈现时候所必须要加载的？那些结构可以稍后加载。</p>
+</li>
+<li><p>把整个过程按照onload事件分隔为两部分，js是一个理想选择。</p>
+</li>
+<li><p>那些你有用于拖放和动画的js,那么就等它稍后加载。</p>
+</li>
+</ul>
+</li>
+<li><p>预加载</p>
+<ul>
+<li><p>预加载是在浏览器空闲时候请求将来可能会用到的页面内容（如图像，样式和文本）</p>
+</li>
+<li><p>当用户在访问下一个页面时候，页面大部分内容都已经加载完毕了。</p>
+</li>
+<li><p>常用方法</p>
+<ul>
+<li><p>无条件加载</p>
+<ul>
+<li>触发onload事件，直接加载额外的页面内容。</li>
+</ul>
+</li>
+<li><p>有条件加载</p>
+<ul>
+<li><p>根据用户的操作来有根据的进行加载</p>
+</li>
+<li><p>有预期的加载：载入重新设计的页面进行预加载。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>减少DOM元素数量</p>
+<ul>
+<li><p>一个复杂页面意味着更多的下载数据，同时也意味着js遍历dom的效率越慢。</p>
+</li>
+<li><p>先规划好页面，尽量优化dom</p>
+</li>
+</ul>
+</li>
+<li><p>用域名划分页面内容</p>
+<ul>
+<li>把页面内容分为若干部分，不同部分放在不同的域名下。</li>
+</ul>
+</li>
+<li><p>将iframe数量降到最低</p>
+<ul>
+<li>iframe优点：解决加载缓慢的第三方内容如图标和广告的加载问题</li>
+</ul>
+</li>
+<li><p>避免404</p>
+<ul>
+<li>http请求消耗是很大的，因此使用http请求获取一个没有用处的响应是完全没有必要的，只会降低用户体验而不会有一点好处</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>服务器</p>
+<ul>
+<li><p>使用内容分发网络CDN</p>
+<ul>
+<li>把你的网站内容分散到多个，位于不同地域的服务器上可以加快加载</li>
+</ul>
+</li>
+<li><p>为文件头指定Expires和Cache-Control</p>
+<ul>
+<li><p>对于静态内容：设置文件头过期时间Expires的值为“Never expire”（永不过期）</p>
+</li>
+<li><p>对于动态内容：使用恰当的Cache-control文件头来帮助浏览器进行有条件的请求</p>
+</li>
+</ul>
+</li>
+<li><p>Gzip压缩文件内容</p>
+<ul>
+<li>目前最流星也是最有效的压缩方式</li>
+</ul>
+</li>
+<li><p>配置ETag</p>
+</li>
+<li><p>尽早刷新输出缓冲</p>
+</li>
+<li><p>使用GET来完成AJAX请求</p>
+</li>
+<li><p>避免空的图像来源</p>
+</li>
+</ul>
+</li>
+<li><p>css</p>
+<ul>
+<li><p>把样式置于顶部</p>
+</li>
+<li><p>避免使用css表达式</p>
+</li>
+<li><p>用@代替import</p>
+</li>
+<li><p>避免使用滤镜</p>
+</li>
+</ul>
+</li>
+<li><p>js</p>
+<ul>
+<li><p>把脚本置于页面底部</p>
+</li>
+<li><p>使用外部css和js</p>
+</li>
+<li><p>精简css和js</p>
+</li>
+<li><p>剔除重复脚本</p>
+</li>
+<li><p>减少dom访问</p>
+</li>
+<li><p>开发智能事件处理请求</p>
+</li>
+</ul>
+</li>
+<li><p>cookie</p>
+<ul>
+<li><p>减少cookie体积</p>
+</li>
+<li><p>对于页面内容使用无cookie域名</p>
+</li>
+</ul>
+</li>
+<li><p>image</p>
+<ul>
+<li><p>优化图像</p>
+<ul>
+<li>推荐工具Smush.it和imagemagick</li>
+</ul>
+</li>
+<li><p>优化css spirite</p>
+</li>
+<li><p>不要在html中缩放图像</p>
+<ul>
+<li>不要在html中通过指定宽和长来缩小图片</li>
+</ul>
+</li>
+<li><p>favicon.ico要小，并且可缓存</p>
+<ul>
+<li><p>文件尽量的小，最好小于1k</p>
+</li>
+<li><p>imagemagic可以帮助你创建小巧的favion</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Mobile</p>
+<ul>
+<li><p>保持单个内容小于25k</p>
+<ul>
+<li><p>iphone不能缓存大于25k文件</p>
+</li>
+<li><p>精简文本十分必要</p>
+</li>
+</ul>
+</li>
+<li><p>打包组件成复合文本</p>
+</li>
+</ul>
+</li>
+<li><p>参考</p>
+<ul>
+<li><a href="http://developer.yahoo.com/performance/rules.html" target="_blank">Best Practices for Speeding Up Your Web Site</a></li>
+</ul>
 </li>
 </ol>
-<p>当然也可以在nginx重新启动前使用-t来测试nginx.conf是否正确.</p>
-<pre><code>`nginx -t`  
-</code></pre><p>此命令还可以找到nginx.conf所处的位置,以下就是我的nginx提示信息:<br>    <code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code><br>    <code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
 
     
   </div>
-  <footer class="end-sep">
+  <footer>
     
       
       
@@ -129,101 +282,12 @@
 </article>
 
 
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-04T00:00:00.000Z"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">11月 4 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">Ubuntu解压乱码问题</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h3 id="ubuntu-">Ubuntu 压缩乱码问题</h3>
-<p>Ubuntu在解压中文文件时候解决方案  </p>
-<p>1.<strong>zip解压中文乱码</strong> 
-window下zip后的文件，在Ubuntu上unzip后乱码.</p>
-<pre><code>unzip -O CP936 xxx.zip -d sun/
-</code></pre><p>为了以后方便还是来个alias吧</p>
-<pre><code>alias unzip-gbk = unzip -O CP936
-</code></pre><p>2.<strong>中文文件乱码问题,Ubuntu对中文的支持已经很好了.</strong><br>比如这样的文件:    </p>
-<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][161µçÓ°ÍøDY161.COM]
-</code></pre><p>有效的办法：
-<strong> 使用convmv来进行转换:</strong>
-具体步骤:<br> 1.安装convmv     </p>
-<pre><code>sudo apt-get install convmv 
-</code></pre><p> 2.转换开始<br>       <strong>保险起见，将要更改的文件复制到一个空的目录里面</strong><br>a.   这个属于基本的.</p>
-<pre><code>  convmv * -f gbk -t utf8 --notest
-</code></pre><p>b.  &lt;<strong>这个更管用</strong>&gt;  </p>
-<pre><code>  convmv -r -f utf8 -t iso88591 * --notest --nosmart &amp;&amp; convmv -r -f gbk -t utf8 * --notest --nosmart
-</code></pre>
-    
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-03T00:00:00.000Z"><a href="/2013/11/03/2013-11-03-从离开到进入创业公司/">11月 3 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/03/2013-11-03-从离开到进入创业公司/">从离开到进入创业公司</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h4 id="-">开始的第一篇</h4>
-<p>晚上,在卫生间看到了[小道君]的一篇微信文章,我们要从[员工的辞职信息里面看到别的信息].于是才有了此文!</p>
-<p>我想这样开始,我是12年才开始真正意义上的接触互联网.大学时代学的很多,但都不精巧.大学毕业后,才知道一个事实,活着,严格意义上好好的过着自己想过的生活是有点那个什么了/</p>
-<hr>
-<pre><code>&quot;孩子,你想多了! 做事情,你做好一件事情已经成功了!莫要贪多,贪多嚼不烂&quot;!
-</code></pre><p>12年,第一家公司.这家公司严格意义上并非一家真正的互联网公司.老板的企业文化是[我要你们像流水线工人一般,好好干],你猜我想到了什么!台湾首富[郭台铭]的富士康.毕竟我在那里呆过,不符合人道.玩计算机的,都知道&quot;freedom&quot;&quot;opensource&quot;是追求,但是至少在这里我感觉不到编码的快乐.如果你还在这样的公司,我可以肯定告诉你,你还是换家公司吧!再高的工资都给不了你快感!中间,有幸当上了项目负责人,但项目负责人不是项目经理,这是一个不讨好的工作,当年被别人面试的时候,发誓自己有一天要把这口气要回来,是不是有点小马哥哥的气势,可是当我听到[熟练使用notepad++],我就开始忍不住骂街了,亲,你好歹也说个[熟练使用VIM或者是Emacs]啊!
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2013/11/03/2013-11-03-从离开到进入创业公司/#more" class="more-link">Read More</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-
-  <nav id="pagination">
-  
-    <a href="/archives/2013/11/" class="prev">上一页</a>
-  
-  
-  <div class="clearfix"></div>
-</nav>
-
+</section>
 </div>
   </div>
   <div class="widget-wrapper">
@@ -361,7 +425,7 @@ window下zip后的文件，在Ubuntu上unzip后乱码.</p>
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   }());
 </script>

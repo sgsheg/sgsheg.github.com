@@ -48,6 +48,52 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2013-11-04T00:00:00.000Z"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">11月 4 2013</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/11/04/2013-11-04-ubuntu解压乱码/">Ubuntu解压乱码问题</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="ubuntu-">Ubuntu 压缩乱码问题</h3>
+<p>Ubuntu在解压中文文件时候解决方案  </p>
+<p>1.<strong>zip解压中文乱码</strong> 
+window下zip后的文件，在Ubuntu上unzip后乱码.</p>
+<pre><code>unzip -O CP936 xxx.zip -d sun/
+</code></pre><p>为了以后方便还是来个alias吧</p>
+<pre><code>alias unzip-gbk = unzip -O CP936
+</code></pre><p>2.<strong>中文文件乱码问题,Ubuntu对中文的支持已经很好了.</strong><br>比如这样的文件:    </p>
+<pre><code>[¹Å»ó×Ð£º½­ºþÐÂÖÈÐò DVDÎÞÉ¾¼õÔÁÓïÖÐ×ÖÊ×·¢][161µçÓ°ÍøDY161.COM]
+</code></pre><p>有效的办法：
+<strong> 使用convmv来进行转换:</strong>
+具体步骤:<br> 1.安装convmv     </p>
+<pre><code>sudo apt-get install convmv 
+</code></pre><p> 2.转换开始<br>       <strong>保险起见，将要更改的文件复制到一个空的目录里面</strong><br>a.   这个属于基本的.</p>
+<pre><code>  convmv * -f gbk -t utf8 --notest
+</code></pre><p>b.  &lt;<strong>这个更管用</strong>&gt;  </p>
+<pre><code>  convmv -r -f utf8 -t iso88591 * --notest --nosmart &amp;&amp; convmv -r -f gbk -t utf8 * --notest --nosmart
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2013-11-03T00:00:00.000Z"><a href="/2013/11/03/2013-11-03-从离开到进入创业公司/">11月 3 2013</a></time>
     
     
@@ -304,6 +350,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/19/2014-02-19-website-developer/">那些开发中使用到的资源网站</a>
       </li>
     
@@ -317,10 +367,6 @@
     
       <li>
         <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
-      </li>
-    
-      <li>
-        <a href="/2013/12/31/2013-12-31-新年你好/">2014,你好!</a>
       </li>
     
   </ul>
