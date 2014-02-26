@@ -52,6 +52,60 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2013-11-28T00:00:00.000Z"><a href="/2013/11/28/2013-11-28-学习emacs/">11月 28 2013</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2013/11/28/2013-11-28-学习emacs/">关于神的编辑器emacs[1]</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="-emacs-">关于emacs的使用</h3>
+<ol>
+<li>关于emacs在ubuntu 12.04安装</li>
+</ol>
+<p>推荐添加ppa:</p>
+<pre><code>sudo add-apt-repository ppa:cassou/emacs
+
+
+sudo apt-get update
+
+
+sudo apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+</code></pre><p>更多内容请:</p>
+<p><a href="http://askubuntu.com/questions/297170/how-to-install-emacs-24-3-on-ubuntu" title="How to install emacs 24.3 on Ubuntu 12.04" target="_blank">how to install emacs24.3 on Ubuntu</a></p>
+<ol>
+<li>emacs启动</li>
+</ol>
+<p>打开emacs</p>
+<pre><code>$ emacs
+</code></pre><p>不打开图形界面，直接在终端使用</p>
+<pre><code>$ emacs -nw
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2013/11/28/2013-11-28-学习emacs/#more" class="more-link">Read More</a>
+        </div>
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2013-11-27T00:00:00.000Z"><a href="/2013/11/27/2013-11-27-敬畏之心/">11月 27 2013</a></time>
     
     
@@ -260,53 +314,6 @@ sudo apt-get clean
 
 
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-05T00:00:00.000Z"><a href="/2013/11/05/2013-11-05-ngxin使用1/">11月 5 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/05/2013-11-05-ngxin使用1/">nginx的使用</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h4 id="-nginx-">关于nginx的使用</h4>
-<ol>
-<li><p>在ubuntu下安装nginx：</p>
-<p> <code>sudo apt-get install nginx</code>  </p>
-</li>
-<li><p>安装完成以后，在浏览器中打开<a href="http://127.0.0.1" target="_blank">http://127.0.0.1</a></p>
-<p>修改nginx的配置:</p>
-<p> <code>vim /etc/nginx/nginx.conf</code>  </p>
-<p> 保险起见，还是先备份以下:</p>
-<p> <code>sudo cp /etc/ngin.conf /etc/nginx/nginx.conf.back</code></p>
-</li>
-<li><p>修改完nginx.conf以后，重新启动nginx</p>
-<p><code>sudo /etc/init.d/nginx restart</code></p>
-</li>
-</ol>
-<p>当然也可以在nginx重新启动前使用-t来测试nginx.conf是否正确.</p>
-<pre><code>`nginx -t`  
-</code></pre><p>此命令还可以找到nginx.conf所处的位置,以下就是我的nginx提示信息:<br>    <code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code><br>    <code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -392,6 +399,10 @@ sudo apt-get clean
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/26/mac搭建php开发环境/">Mac搭建php开发环境</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
       </li>
     
@@ -405,10 +416,6 @@ sudo apt-get clean
     
       <li>
         <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">代码的未来阅读笔记&lt;上&gt;</a>
-      </li>
-    
-      <li>
-        <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
       </li>
     
   </ul>

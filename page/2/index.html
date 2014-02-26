@@ -48,6 +48,58 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2014-01-01T00:00:00.000Z"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">1月 1 2014</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="-ubuntu-">重新安装Ubuntu常用软件小记</h3>
+<ol>
+<li><p>更新源</p>
+<pre><code> sudo vi /etc/apt/sources.list 
+</code></pre></li>
+</ol>
+<p>使用网易163源</p>
+<pre><code>deb http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse
+deb http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted
+deb-src http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted
+deb http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted
+deb http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted
+deb-src http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted
+deb http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted
+deb-src http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted
+deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted
+</code></pre><p>更新后，</p>
+<pre><code>sudo apt-get update 
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/#more" class="more-link">Read More</a>
+        </div>
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+
+  <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2013-12-31T00:00:00.000Z"><a href="/2013/12/31/2013-12-31-新年你好/">12月 31 2013</a></time>
     
     
@@ -230,60 +282,6 @@
 
 
 
-  <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2013-11-28T00:00:00.000Z"><a href="/2013/11/28/2013-11-28-学习emacs/">11月 28 2013</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2013/11/28/2013-11-28-学习emacs/">关于神的编辑器emacs[1]</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <h3 id="-emacs-">关于emacs的使用</h3>
-<ol>
-<li>关于emacs在ubuntu 12.04安装</li>
-</ol>
-<p>推荐添加ppa:</p>
-<pre><code>sudo add-apt-repository ppa:cassou/emacs
-
-
-sudo apt-get update
-
-
-sudo apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
-</code></pre><p>更多内容请:</p>
-<p><a href="http://askubuntu.com/questions/297170/how-to-install-emacs-24-3-on-ubuntu" title="How to install emacs 24.3 on Ubuntu 12.04" target="_blank">how to install emacs24.3 on Ubuntu</a></p>
-<ol>
-<li>emacs启动</li>
-</ol>
-<p>打开emacs</p>
-<pre><code>$ emacs
-</code></pre><p>不打开图形界面，直接在终端使用</p>
-<pre><code>$ emacs -nw
-</code></pre>
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2013/11/28/2013-11-28-学习emacs/#more" class="more-link">Read More</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-
 
 <nav id="pagination">
   
@@ -367,6 +365,10 @@ sudo apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
   <ul class="entry">
     
       <li>
+        <a href="/2014/02/26/mac搭建php开发环境/">Mac搭建php开发环境</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/22/再看提升网站性能最佳实践/">再看提升网站性能最佳实践</a>
       </li>
     
@@ -380,10 +382,6 @@ sudo apt-get install emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
     
       <li>
         <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">代码的未来阅读笔记&lt;上&gt;</a>
-      </li>
-    
-      <li>
-        <a href="/2014/01/01/2014-01-01-重新安装ubuntu小记/">重新安装ubuntu小记</a>
       </li>
     
   </ul>
