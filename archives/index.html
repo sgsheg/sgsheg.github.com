@@ -52,6 +52,82 @@
   <header>
     
       <div class="icon"></div>
+      <time datetime="2014-03-14T15:26:29.000Z"><a href="/2014/03/14/2014第一篇工作总结/">3月 14 2014</a></time>
+    
+    
+  
+    <h1 class="title"><a href="/2014/03/14/2014第一篇工作总结/">2014第一篇工作总结</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>近期在做移动和后台管理系统，随着科技发展，也在不断的增长着知识。总结一些自己没有真正掌握的技术点：</p>
+<ol>
+<li><p>html</p>
+<ul>
+<li><p>input-&gt;readonly属性，在后台部分，当table列表中用户没有权限去修改行内容时候，<code>&lt;input readonly=&quot;readonly&quot;</code>很好解决了这个问题。而减少了一些复杂的js控制。</p>
+</li>
+<li><p>图片在多设备展示问题，项目中遇到一个问题。一张图片所在div既要满足于设备的宽度又要在几乎所有设备上面展示相近，那么合理的去使用流式布局是一种很正确的思路，唯一麻烦的地方是要根据设计稿来计算百分比以达到几乎完美的境地。这需要耐心与不断的测试。</p>
+</li>
+<li><p>图片在基本html中，如果仅仅是一张图片，要记住也要给图片设置百分比宽高。</p>
+<pre><code>  &lt;img src=&quot;1.jpg&quot; width=&quot;100%&quot; height=&quot;100%&quot;/&gt;
+</code></pre></li>
+<li><p>满足两个div无论设备分辨率大小都要始终满足登高，特别是在移动设备上。这个时候不得不用到纯生js.</p>
+<pre><code>  //页面初次加载
+  xxx.style.cssText
+
+  //windo.resize
+  xxx.style.cssText
+</code></pre><p>  -- 期间要注意多个元素获取时候，要使用<code>length</code>来进行判断对象是否存在</p>
+</li>
+<li><p>切莫自己去多写bootstrap的新css,使用版本是2.3版本，bootstrap封装了很多的好用的属性，不要为了某些特殊的效果而在bootstrap上比如<code>span2,span12</code>，这个时候何不多追加一个class去覆盖呢。</p>
+<p>  // 如何去更改Input的宽度
+  可以使用</p>
+<pre><code>  input-mini
+
+  input-small
+
+  input-medium
+
+  input-large
+
+  input-xlarge
+
+  input-xxlarge
+</code></pre></li>
+</ul>
+</li>
+<li><p>javascript</p>
+<ul>
+<li><p>减少全局变量，多用局部变量</p>
+</li>
+<li><p>学会封装,使用iife</p>
+</li>
+<li><p>$(this), this, winow</p>
+</li>
+</ul>
+</li>
+</ol>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <time datetime="2014-02-26T09:39:47.000Z"><a href="/2014/02/26/mac搭建php开发环境/">2月 26 2014</a></time>
     
     
@@ -245,48 +321,6 @@
 
 
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <time datetime="2014-01-06T09:09:22.000Z"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">1月 6 2014</a></time>
-    
-    
-  
-    <h1 class="title"><a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">代码的未来阅读笔记&lt;上&gt;</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <ol>
-<li><p>编程的本质在于&quot;思考&quot;!编程不是和计算机打交道,而是对象是人类,因此这是个非常&quot;有人味&quot;的工作.</p>
-</li>
-<li><p>我喜欢编程,多少年来从未厌倦,这其中最大的理由,就是因为我把编程看作是一项创造性的工作吧!</p>
-</li>
-<li><p>摩尔定律是由美国因特尔公司创始人之一的高登◇摩尔于40年前的1965年,在其发表的论文中提出的,这个定律的内容如下:LSI中的晶体数量每18个月增加一倍. </p>
-</li>
-<li><p>然而,邮件基础技术却是出人意料地古老.世界上第一封电子邮件是在1971年发送的,而现在包括手机邮件在内所遵循的RFC822格式则是在1982年定制的,差不多是距今30年前的东西了.此外,现在依然作为主流而被广泛使用的TCP/IP互联网通信协议也差不多在那个时候定义的.
-读一读《圣经》之类的古典著作你就会惊奇地发现，人类从几千年到现在所纠结的那些事情几乎没有什么变化.从人类本质上来看,技术的进步只不过是些细枝末节的改变罢了.</p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-        <div class="alignleft">
-          <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/#more" class="more-link">Read More</a>
-        </div>
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
 
   <nav id="pagination">
   
@@ -370,6 +404,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/03/14/2014第一篇工作总结/">2014第一篇工作总结</a>
+      </li>
+    
+      <li>
         <a href="/2014/02/26/mac搭建php开发环境/">Mac搭建php开发环境</a>
       </li>
     
@@ -383,10 +421,6 @@
     
       <li>
         <a href="/2014/01/08/2014-01-08-代码的未来下/">《代码的未来》阅读下</a>
-      </li>
-    
-      <li>
-        <a href="/2014/01/06/2014-01-06-代码的未来阅读笔记上/">代码的未来阅读笔记&lt;上&gt;</a>
       </li>
     
   </ul>

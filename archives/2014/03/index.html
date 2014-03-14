@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>敬畏之心 | sgsheg</title>
+  <title>归档：2014/3 | sgsheg</title>
   <meta name="author" content="sgsheg">
   
   <meta name="description" content="做一个靠谱的IT男!">
@@ -44,7 +44,7 @@
 </nav>
 <div class="clearfix"></div></header>
     <div class="content">
-<h2 class="archive-title tag">敬畏之心</h2>
+<h2 class="archive-title">2014/3</h2>
 
 
   
@@ -52,26 +52,62 @@
   <header>
     
       <div class="icon"></div>
-      <time datetime="2013-11-27T00:00:00.000Z"><a href="/2013/11/27/2013-11-27-敬畏之心/">11月 27 2013</a></time>
+      <time datetime="2014-03-14T15:26:29.000Z"><a href="/2014/03/14/2014第一篇工作总结/">3月 14 2014</a></time>
     
     
   
-    <h1 class="title"><a href="/2013/11/27/2013-11-27-敬畏之心/">敬畏之心</a></h1>
+    <h1 class="title"><a href="/2014/03/14/2014第一篇工作总结/">2014第一篇工作总结</a></h1>
   
 
   </header>
   
   <div class="entry">
     
-      <h3 id="-">敬畏之心</h3>
+      <p>近期在做移动和后台管理系统，随着科技发展，也在不断的增长着知识。总结一些自己没有真正掌握的技术点：</p>
 <ol>
-<li><p>一次康熙帝在宫中设坛祈祷,长跪三昼夜,日惟淡食,不御盐酱.到第四日,大雨如注,水满两靴,衣尽沾湿,步行回宫.其敬诚之心,诸臣莫不感动.</p>
+<li><p>html</p>
+<ul>
+<li><p>input-&gt;readonly属性，在后台部分，当table列表中用户没有权限去修改行内容时候，<code>&lt;input readonly=&quot;readonly&quot;</code>很好解决了这个问题。而减少了一些复杂的js控制。</p>
 </li>
-<li><p>唐太宗说&quot;朕每思出一言,行一事,必上畏皇天,下惧群臣&quot;!</p>
+<li><p>图片在多设备展示问题，项目中遇到一个问题。一张图片所在div既要满足于设备的宽度又要在几乎所有设备上面展示相近，那么合理的去使用流式布局是一种很正确的思路，唯一麻烦的地方是要根据设计稿来计算百分比以达到几乎完美的境地。这需要耐心与不断的测试。</p>
 </li>
-<li><p>然而,明君敬畏,昏君无惧.</p>
+<li><p>图片在基本html中，如果仅仅是一张图片，要记住也要给图片设置百分比宽高。</p>
+<pre><code>  &lt;img src=&quot;1.jpg&quot; width=&quot;100%&quot; height=&quot;100%&quot;/&gt;
+</code></pre></li>
+<li><p>满足两个div无论设备分辨率大小都要始终满足登高，特别是在移动设备上。这个时候不得不用到纯生js.</p>
+<pre><code>  //页面初次加载
+  xxx.style.cssText
+
+  //windo.resize
+  xxx.style.cssText
+</code></pre><p>  -- 期间要注意多个元素获取时候，要使用<code>length</code>来进行判断对象是否存在</p>
 </li>
-<li><p>人,不可以没有畏惧之心.</p>
+<li><p>切莫自己去多写bootstrap的新css,使用版本是2.3版本，bootstrap封装了很多的好用的属性，不要为了某些特殊的效果而在bootstrap上比如<code>span2,span12</code>，这个时候何不多追加一个class去覆盖呢。</p>
+<p>  // 如何去更改Input的宽度
+  可以使用</p>
+<pre><code>  input-mini
+
+  input-small
+
+  input-medium
+
+  input-large
+
+  input-xlarge
+
+  input-xxlarge
+</code></pre></li>
+</ul>
+</li>
+<li><p>javascript</p>
+<ul>
+<li><p>减少全局变量，多用局部变量</p>
+</li>
+<li><p>学会封装,使用iife</p>
+</li>
+<li><p>$(this), this, winow</p>
+</li>
+</ul>
 </li>
 </ol>
 
